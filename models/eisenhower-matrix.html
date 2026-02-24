@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situational Leadership | Leadership Blueprint</title>
+    <title>The Eisenhower Matrix | Leadership Blueprint</title>
     <style>
         :root {
             --bg: #0b0e14;
@@ -66,21 +66,18 @@
             position: relative;
         }
         .grid-cell {
-            padding: 2rem;
+            padding: 2.5rem 1rem;
             border-radius: 12px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.3s;
         }
-        .grid-cell:hover { transform: scale(1.05); }
-        .grid-cell h3 { margin: 0.5rem 0; color: #fff; font-size: 1.2rem; }
-        .grid-cell p { margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-        .cell-tag { font-weight: 800; color: var(--accent); opacity: 0.5; font-size: 2rem; display: block; }
+        .grid-cell h3 { margin: 0; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
+        .grid-cell p { margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--accent); font-weight: bold; }
         
-        .s1 { background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); }
-        .s2 { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
-        .s3 { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.3); }
-        .s4 { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); }
+        .q1 { background: rgba(239, 68, 68, 0.15); border-color: #ef4444; }
+        .q2 { background: rgba(34, 197, 94, 0.15); border-color: #22c55e; }
+        .q3 { background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; }
+        .q4 { background: rgba(107, 114, 128, 0.15); border-color: #6b7280; }
 
         .axis {
             font-size: 0.75rem;
@@ -99,7 +96,7 @@
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 12px;
@@ -108,11 +105,7 @@
         }
         .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
         h2 {
             color: var(--accent);
@@ -129,18 +122,8 @@
             border-radius: 12px;
             margin: 4rem 0; 
         }
-        .action-box h3 { margin-top: 0; color: #ffffff; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 1rem; }
-        strong { color: var(--accent); }
         footer { 
-            margin-top: 8rem; 
-            padding: 4rem 1.5rem;
-            background: #0d1117;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem; 
-            color: var(--text-dim);
-            text-align: center;
+            margin-top: 8rem; padding: 4rem 1.5rem; background: #0d1117; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);
         }
     </style>
 </head>
@@ -151,56 +134,41 @@
     
     <div class="container">
         <a href="../index.html" class="back-link">← Back to Models</a>
-        <h1>Situational Leadership</h1>
+        <h1>The Eisenhower Matrix</h1>
 
         <div class="model-visual-container">
             <div class="diagram-grid">
-                <div class="grid-cell s3">
-                    <span class="cell-tag">S3</span>
-                    <h3>Participating</h3>
-                    <p>Low Task / High Rel.</p>
+                <div class="grid-cell q2">
+                    <h3>Schedule</h3>
+                    <p>Important / Not Urgent</p>
                 </div>
-                <div class="grid-cell s2">
-                    <span class="cell-tag">S2</span>
-                    <h3>Selling</h3>
-                    <p>High Task / High Rel.</p>
+                <div class="grid-cell q1">
+                    <h3>Do First</h3>
+                    <p>Important / Urgent</p>
                 </div>
-                <div class="grid-cell s4">
-                    <span class="cell-tag">S4</span>
-                    <h3>Delegating</h3>
-                    <p>Low Task / Low Rel.</p>
+                <div class="grid-cell q4">
+                    <h3>Eliminate</h3>
+                    <p>Not Important / Not Urgent</p>
                 </div>
-                <div class="grid-cell s1">
-                    <span class="cell-tag">S1</span>
-                    <h3>Telling</h3>
-                    <p>High Task / Low Rel.</p>
+                <div class="grid-cell q3">
+                    <h3>Delegate</h3>
+                    <p>Not Important / Urgent</p>
                 </div>
-                <div class="axis x-axis">Team Member Competence & Commitment →</div>
-                <div class="axis y-axis">Leader Support & Direction →</div>
+                <div class="axis x-axis">Urgency →</div>
+                <div class="axis y-axis">Importance →</div>
             </div>
         </div>
         
-        <p>Developed by Paul Hersey and Ken Blanchard, this model suggests that there is no "single best" style of leadership. Instead, the most effective leaders adapt their style to the <strong>Performance Readiness</strong> of the person they are leading.</p>
+        <p>The Eisenhower Matrix is a simple tool for prioritizing tasks and managing workload. It helps you distinguish between what is <strong>urgent</strong> and what is <strong>important</strong>, allowing you to focus on the work that actually moves the needle.</p>
         
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/vbFizKChM-g" title="Situational Leadership Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tT89OZ7TNwc" title="Eisenhower Matrix Video" allowfullscreen></iframe>
         </div>
-
-        <h2>The Four Styles</h2>
-        <ul>
-            <li><strong>S1: Telling</strong> (High Task, Low Relationship) – For people who lack competence but are committed.</li>
-            <li><strong>S2: Selling</strong> (High Task, High Relationship) – For people who have some competence but lack commitment.</li>
-            <li><strong>S3: Participating</strong> (Low Task, High Relationship) – For people who have competence but lack confidence.</li>
-            <li><strong>S4: Delegating</strong> (Low Task, Low Relationship) – For people who are both competent and committed.</li>
-        </ul>
 
         <div class="action-box">
             <h3>How to use this today:</h3>
-            <p>Pick one team member. Ask yourself: <em>"Do they have the skills for this specific task, and do they have the confidence?"</em> If they are new and nervous, use <strong>S1</strong>. If they are a pro, use <strong>S4</strong> and step back.</p>
+            <p>List everything on your plate. Force-rank them into these 4 boxes. If it's in the <strong>Delegate</strong> box, find someone else to do it immediately. If it's in <strong>Eliminate</strong>, cross it off and don't look back.</p>
         </div>
-
-        <h2>References</h2>
-        <p><small>Hersey, P. and Blanchard, K. H. (1969). Life cycle theory of leadership. Training and Development Journal.</small></p>
 
         <footer>
             <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>

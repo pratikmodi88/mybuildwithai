@@ -6,19 +6,20 @@
     <title>Situational Leadership | Leadership Blueprint</title>
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
+            --bg: #ffffff;
+            --card-bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-dim: #475569;
+            --accent: #22a6b3;
+            --accent-dark: #130f40;
+            --border: #e2e8f0;
         }
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
             line-height: 1.8; 
             max-width: 800px; 
             margin: 0 auto; 
-            padding: 4rem 1.5rem; 
+            padding: 2rem 1.5rem; 
             background: var(--bg);
             color: var(--text-main);
         }
@@ -32,6 +33,7 @@
         h1 { 
             font-size: 2.5rem; 
             margin-bottom: 1.5rem;
+            color: var(--accent-dark);
             letter-spacing: -0.02em;
         }
         h2 {
@@ -40,22 +42,23 @@
             font-size: 1.5rem;
         }
         .action-box { 
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            background: #f0fdfa;
             border-left: 4px solid var(--accent); 
             padding: 2rem; 
             border-radius: 12px;
             margin: 3rem 0; 
         }
-        .action-box h3 { margin-top: 0; color: var(--text-main); }
+        .action-box h3 { margin-top: 0; color: var(--accent-dark); }
         ul { padding-left: 1.2rem; }
         li { margin-bottom: 0.75rem; }
         strong { color: var(--accent); }
         footer { 
             margin-top: 6rem; 
-            padding-top: 2rem;
+            padding: 2rem 0;
             border-top: 1px solid var(--border);
             font-size: 0.85rem; 
-            color: var(--text-dim); 
+            color: var(--text-dim);
+            text-align: center;
         }
     </style>
 </head>

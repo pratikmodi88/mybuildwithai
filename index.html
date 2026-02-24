@@ -33,7 +33,7 @@
             border-bottom: 4px solid var(--accent);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
-        .logo { max-width: 200px; }
+        .logo { max-width: 200px; height: auto; }
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -66,18 +66,18 @@
         .model-card {
             background: var(--card-bg);
             padding: 3rem;
-            border-radius: 4px; /* Sharper, more professional edges */
+            border-radius: 4px;
             border: 1px solid var(--border);
             text-decoration: none;
             display: block;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
         }
         .model-card:hover { 
             border-color: var(--accent);
             background: #1c2128;
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
         }
         .meta {
             font-size: 0.8rem;
@@ -107,12 +107,11 @@
             color: var(--text-dim);
             text-align: center;
         }
-        footer strong { color: var(--text-main); }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <img src="assets/logo.jpg" alt="AI for Business Leader" class="logo">
+        <img src="assets/logo.jpg?v=2" alt="AI for Business Leader" class="logo">
     </div>
 
     <div class="container">
@@ -142,9 +141,6 @@
 
     <footer>
         <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Proprietary Content of Pratik Kumar Modi. Frameworks adapted for digital implementation by the Leadership Blueprint team. All referenced trademarks belong to their respective owners.
-        </p>
     </footer>
 </body>
 </html>

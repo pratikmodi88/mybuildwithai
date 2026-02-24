@@ -6,22 +6,34 @@
     <title>Situational Leadership | Leadership Blueprint</title>
     <style>
         :root {
-            --bg: #ffffff;
-            --card-bg: #f8fafc;
-            --text-main: #0f172a;
-            --text-dim: #475569;
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
             --accent: #22a6b3;
-            --accent-dark: #130f40;
-            --border: #e2e8f0;
+            --border: #30363d;
+            --header-bg: #ffffff;
         }
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
             line-height: 1.8; 
-            max-width: 800px; 
+            max-width: 100%; 
             margin: 0 auto; 
-            padding: 2rem 1.5rem; 
+            padding: 0; 
             background: var(--bg);
             color: var(--text-main);
+        }
+        .top-bar {
+            background: var(--header-bg);
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+        .logo { max-width: 180px; }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
         }
         a.back-link { 
             color: var(--accent); 
@@ -31,39 +43,48 @@
             font-weight: 600;
         }
         h1 { 
-            font-size: 2.5rem; 
+            font-size: 2.8rem; 
             margin-bottom: 1.5rem;
-            color: var(--accent-dark);
+            color: #ffffff;
             letter-spacing: -0.02em;
         }
         h2 {
             color: var(--accent);
-            margin-top: 3rem;
-            font-size: 1.5rem;
+            margin-top: 3.5rem;
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
         }
         .action-box { 
-            background: #f0fdfa;
+            background: rgba(34, 166, 179, 0.05);
+            border: 1px solid rgba(34, 166, 179, 0.2);
             border-left: 4px solid var(--accent); 
-            padding: 2rem; 
+            padding: 2.5rem; 
             border-radius: 12px;
-            margin: 3rem 0; 
+            margin: 4rem 0; 
         }
-        .action-box h3 { margin-top: 0; color: var(--accent-dark); }
+        .action-box h3 { margin-top: 0; color: #ffffff; }
         ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.75rem; }
+        li { margin-bottom: 1rem; }
         strong { color: var(--accent); }
         footer { 
-            margin-top: 6rem; 
-            padding: 2rem 0;
+            margin-top: 8rem; 
+            padding: 4rem 1.5rem;
+            background: #0d1117;
             border-top: 1px solid var(--border);
-            font-size: 0.85rem; 
+            font-size: 0.9rem; 
             color: var(--text-dim);
             text-align: center;
         }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Blueprint</a>
+    <div class="top-bar">
+        <img src="../assets/logo.jpg" alt="AI for Business Leader" class="logo">
+    </div>
+    
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Models</a>
     <h1>Situational Leadership</h1>
     <p>Developed by Paul Hersey and Ken Blanchard, this model suggests that there is no "single best" style of leadership. Instead, the most effective leaders adapt their style to the <strong>Performance Readiness</strong> of the person they are leading.</p>
     

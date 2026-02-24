@@ -6,106 +6,134 @@
     <title>Leadership Blueprint | Simple, Actionable Models</title>
     <style>
         :root {
-            --bg: #ffffff;
-            --card-bg: #f8fafc;
-            --text-main: #0f172a;
-            --text-dim: #475569;
+            --bg: #0b0e14; /* Deep, professional dark blue-black */
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
             --accent: #22a6b3; /* Teal from logo */
-            --accent-dark: #130f40; /* Navy from logo */
-            --border: #e2e8f0;
+            --accent-dark: #38bdf8;
+            --border: #30363d;
+            --header-bg: #ffffff; /* Keeping a white header bar so the logo looks perfect */
         }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 0;
             background: var(--bg);
         }
-        header {
+        .top-bar {
+            background: var(--header-bg);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            max-width: 220px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        header.content-header {
             text-align: center;
             margin-bottom: 4rem;
         }
-        .logo {
-            max-width: 180px;
-            margin-bottom: 1.5rem;
-        }
         h1 { 
-            font-size: 2.5rem; 
+            font-size: 3rem; 
             font-weight: 800;
             margin: 0; 
             letter-spacing: -0.05em;
-            color: var(--accent-dark);
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         p.subtitle { 
-            color: var(--text-dim); 
-            font-size: 1.1rem;
+            color: var(--accent); 
+            font-size: 1.25rem;
+            font-weight: 500;
             margin-top: 0.5rem; 
         }
         #model-list {
             display: grid;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         .model-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 2.5rem;
+            border-radius: 16px;
             border: 1px solid var(--border);
             text-decoration: none;
             display: block;
             color: inherit;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
         .model-card:hover { 
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background: #1c2128;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
         }
         .model-card h2 { 
-            margin: 0 0 0.5rem 0; 
-            font-size: 1.5rem;
-            color: var(--accent-dark);
+            margin: 0 0 1rem 0; 
+            font-size: 1.75rem;
+            color: var(--accent);
+        }
+        .model-card p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
         }
         .tag {
             display: inline-block;
-            font-size: 0.7rem;
-            background: #e0f2f1;
+            font-size: 0.75rem;
+            background: rgba(34, 166, 179, 0.15);
             color: var(--accent);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
             text-transform: uppercase;
             font-weight: 700;
             margin-bottom: 1rem;
+            border: 1px solid rgba(34, 166, 179, 0.3);
         }
         footer {
-            margin-top: 6rem;
-            padding: 2rem 0;
+            margin-top: 8rem;
+            padding: 4rem 1.5rem;
+            background: #0d1117;
             border-top: 1px solid var(--border);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-dim);
             text-align: center;
         }
+        footer strong { color: var(--text-main); }
     </style>
 </head>
 <body>
-    <header>
+    <div class="top-bar">
         <img src="assets/logo.jpg" alt="AI for Business Leader" class="logo">
-        <h1>Leadership Blueprint</h1>
-        <p class="subtitle">Actionable frameworks curated for the modern business leader.</p>
-    </header>
+    </div>
 
-    <main id="model-list">
-        <a href="models/situational-leadership.html" class="model-card">
-            <span class="tag">Active</span>
-            <h2>Situational Leadership</h2>
-            <p>Adapt your management style to the maturity and skill level of your team members.</p>
-        </a>
-    </main>
+    <div class="container">
+        <header class="content-header">
+            <h1>Leadership Blueprint</h1>
+            <p class="subtitle">Actionable Frameworks for Modern Leaders</p>
+        </header>
+
+        <main id="model-list">
+            <a href="models/situational-leadership.html" class="model-card">
+                <span class="tag">Knowledge Hub</span>
+                <h2>Situational Leadership</h2>
+                <p>Master the art of adapting your leadership style to match the performance readiness of your team.</p>
+            </a>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
-        <p>Proprietary of Pratik Kumar Modi</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.6;">Proprietary of Pratik Kumar Modi | Curated by AI for Business Leaders</p>
     </footer>
 </body>
 </html>

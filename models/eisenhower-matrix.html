@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Eisenhower Matrix | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0b0e14;
@@ -33,28 +36,46 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
         }
-        a.back-link { 
-            color: var(--accent); 
-            text-decoration: none; 
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 600;
+        .metadata {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
         }
         h1 { 
-            font-size: 2.8rem; 
-            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem; 
+            margin-bottom: 0.5rem;
             color: #ffffff;
-            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .published-info {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+        .hero-section {
+            margin: 4rem 0;
+            text-align: center;
         }
         .model-visual-container {
-            background: #161b22;
-            border-radius: 16px;
-            padding: 3rem 1rem 1rem 3rem;
-            margin: 3rem 0;
+            background: #1c2128;
+            border-radius: 8px;
+            padding: 4rem 1rem 1rem 3rem;
             border: 1px solid var(--border);
             position: relative;
+        }
+        .caption {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 1.5rem;
+            font-style: italic;
         }
         .diagram-grid {
             display: grid;
@@ -67,63 +88,56 @@
         }
         .grid-cell {
             padding: 2.5rem 1rem;
-            border-radius: 12px;
+            border-radius: 4px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
         }
         .grid-cell h3 { margin: 0; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
         .grid-cell p { margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--accent); font-weight: bold; }
-        
         .q1 { background: rgba(239, 68, 68, 0.15); border-color: #ef4444; }
         .q2 { background: rgba(34, 197, 94, 0.15); border-color: #22c55e; }
         .q3 { background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; }
         .q4 { background: rgba(107, 114, 128, 0.15); border-color: #6b7280; }
-
-        .axis {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-        }
+        .axis { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; }
         .x-axis { grid-column: 1 / span 2; text-align: center; padding-top: 20px; }
-        .y-axis { 
-            position: absolute; 
-            left: -80px; 
-            top: 40%; 
-            transform: rotate(-90deg) translateY(-50%);
-            white-space: nowrap;
+        .y-axis { position: absolute; left: -85px; top: 40%; transform: rotate(-90deg) translateY(-50%); white-space: nowrap; }
+
+        .meat-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            margin-top: 4rem;
+            font-size: 2rem;
+        }
+        .action-box { 
+            background: rgba(34, 166, 179, 0.05);
+            border-left: 4px solid var(--accent); 
+            padding: 2.5rem; 
+            border-radius: 4px;
+            margin: 4rem 0; 
+        }
+        .video-wrapper {
+            margin: 5rem 0;
         }
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 12px;
-            margin: 3rem 0;
+            border-radius: 4px;
             border: 1px solid var(--border);
         }
         .video-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
-        h2 {
-            color: var(--accent);
-            margin-top: 3.5rem;
-            font-size: 1.75rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-        .action-box { 
-            background: rgba(34, 166, 179, 0.05);
-            border: 1px solid rgba(34, 166, 179, 0.2);
-            border-left: 4px solid var(--accent); 
-            padding: 2.5rem; 
-            border-radius: 12px;
-            margin: 4rem 0; 
+        .video-note {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-top: 1rem;
+            text-align: center;
         }
         footer { 
-            margin-top: 8rem; padding: 4rem 1.5rem; background: #0d1117; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);
+            margin-top: 8rem; padding: 5rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim);
         }
     </style>
 </head>
@@ -133,46 +147,71 @@
     </div>
     
     <div class="container">
-        <a href="../index.html" class="back-link">← Back to Models</a>
+        <div class="metadata">Personal Productivity &bull; Time Management</div>
         <h1>The Eisenhower Matrix</h1>
+        <div class="published-info">Published: Feb 2026 &bull; 5 min read &bull; Curated by Aurora</div>
 
-        <div class="model-visual-container">
-            <div class="diagram-grid">
-                <div class="grid-cell q2">
-                    <h3>Schedule</h3>
-                    <p>Important / Not Urgent</p>
+        <div class="hero-section">
+            <div class="model-visual-container">
+                <div class="diagram-grid">
+                    <div class="grid-cell q2">
+                        <h3>Schedule</h3>
+                        <p>Important / Not Urgent</p>
+                    </div>
+                    <div class="grid-cell q1">
+                        <h3>Do First</h3>
+                        <p>Important / Urgent</p>
+                    </div>
+                    <div class="grid-cell q4">
+                        <h3>Eliminate</h3>
+                        <p>Not Important / Not Urgent</p>
+                    </div>
+                    <div class="grid-cell q3">
+                        <h3>Delegate</h3>
+                        <p>Not Important / Urgent</p>
+                    </div>
+                    <div class="axis x-axis">Urgency →</div>
+                    <div class="axis y-axis">Importance →</div>
                 </div>
-                <div class="grid-cell q1">
-                    <h3>Do First</h3>
-                    <p>Important / Urgent</p>
-                </div>
-                <div class="grid-cell q4">
-                    <h3>Eliminate</h3>
-                    <p>Not Important / Not Urgent</p>
-                </div>
-                <div class="grid-cell q3">
-                    <h3>Delegate</h3>
-                    <p>Not Important / Urgent</p>
-                </div>
-                <div class="axis x-axis">Urgency →</div>
-                <div class="axis y-axis">Importance →</div>
+            </div>
+            <p class="caption">The Time Management Matrix: Diagram adapted from Dwight D. Eisenhower.</p>
+        </div>
+        
+        <div class="meat-section">
+            <h2>The 'Why'</h2>
+            <p>The Eisenhower Matrix is a simple tool for prioritizing tasks and managing workload. It helps you distinguish between what is <strong>urgent</strong> and what is <strong>important</strong>, allowing you to focus on the work that actually moves the needle.</p>
+            
+            <h2>Key Components</h2>
+            <ul>
+                <li><strong>Quadrant 1 (Do First):</strong> Important and Urgent tasks that require immediate attention.</li>
+                <li><strong>Quadrant 2 (Schedule):</strong> Important but Not Urgent tasks—the "Sweet Spot" of long-term growth.</li>
+                <li><strong>Quadrant 3 (Delegate):</strong> Not Important but Urgent distractions that can be handled by others.</li>
+                <li><strong>Quadrant 4 (Eliminate):</strong> Neither Important nor Urgent activities that should be avoided.</li>
+            </ul>
+
+            <div class="action-box">
+                <h3>Practical Application</h3>
+                <p>List everything on your plate. Force-rank them into these 4 boxes. If it's in the <strong>Delegate</strong> box, find someone else to do it immediately. If it's in <strong>Eliminate</strong>, cross it off and don't look back.</p>
             </div>
         </div>
-        
-        <p>The Eisenhower Matrix is a simple tool for prioritizing tasks and managing workload. It helps you distinguish between what is <strong>urgent</strong> and what is <strong>important</strong>, allowing you to focus on the work that actually moves the needle.</p>
-        
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/tT89OZ7TNwc" title="Eisenhower Matrix Video" allowfullscreen></iframe>
+
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/tT89OZ7TNwc" title="Eisenhower Matrix Video" allowfullscreen></iframe>
+            </div>
+            <p class="video-note">Chosen Insight: A practical guide on how to filter out the noise and reclaim your schedule using the Urgent/Important principle.</p>
         </div>
 
-        <div class="action-box">
-            <h3>How to use this today:</h3>
-            <p>List everything on your plate. Force-rank them into these 4 boxes. If it's in the <strong>Delegate</strong> box, find someone else to do it immediately. If it's in <strong>Eliminate</strong>, cross it off and don't look back.</p>
+        <div class="meat-section">
+            <h2 style="font-size: 1.2rem;">Full Citation</h2>
+            <p style="font-size: 0.85rem; font-family: monospace; color: var(--text-dim);">Covey, S. R. (1989). The 7 Habits of Highly Effective People. Free Press.</p>
         </div>
 
         <footer>
             <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.6;">Proprietary of Pratik Kumar Modi | Curated by AI for Business Leaders</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">
+                Proprietary Content of Pratik Kumar Modi. Frameworks adapted for digital implementation.
+            </p>
         </footer>
     </div>
 </body>

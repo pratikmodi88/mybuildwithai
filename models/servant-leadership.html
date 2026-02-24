@@ -27,8 +27,11 @@
         .hero-image { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); }
         .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
         .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border); background: #000; margin: 4rem 0; }
+        .video-wrapper { margin: 4rem 0; text-align: center; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border); background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-link { display: inline-block; margin-top: 1rem; color: var(--accent); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid transparent; }
+        .video-link:hover { border-bottom-color: var(--accent); }
         footer { margin-top: 10rem; padding: 6rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
     </style>
 </head>
@@ -53,8 +56,11 @@
             </div>
         </div>
 
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/a6m3Z5G9Gv0" title="Servant Leadership" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/a6m3Z5G9Gv0" title="Servant Leadership" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/watch?v=a6m3Z5G9Gv0" target="_blank" class="video-link">View on YouTube &rarr;</a>
         </div>
 
         <footer>

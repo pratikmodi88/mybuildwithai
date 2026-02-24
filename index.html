@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Blueprint | Simple, Actionable Models</title>
+    <title>Leadership Blueprint | Professional Management Frameworks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0e14; /* Deep, professional dark blue-black */
+            --bg: #0b0e14;
             --card-bg: #161b22;
             --text-main: #e6edf3;
             --text-dim: #7d8590;
-            --accent: #22a6b3; /* Teal from logo */
-            --accent-dark: #38bdf8;
+            --accent: #22a6b3;
             --border: #30363d;
-            --header-bg: #ffffff; /* Keeping a white header bar so the logo looks perfect */
+            --header-bg: #ffffff;
         }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -26,85 +28,82 @@
         }
         .top-bar {
             background: var(--header-bg);
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             text-align: center;
             border-bottom: 4px solid var(--accent);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
-        .logo {
-            max-width: 220px;
-        }
+        .logo { max-width: 200px; }
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 1.5rem;
         }
         header.content-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
         h1 { 
-            font-size: 3rem; 
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem; 
+            font-weight: 700;
             margin: 0; 
-            letter-spacing: -0.05em;
+            letter-spacing: -0.02em;
             color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         p.subtitle { 
             color: var(--accent); 
             font-size: 1.25rem;
             font-weight: 500;
-            margin-top: 0.5rem; 
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         #model-list {
             display: grid;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         .model-card {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 4px; /* Sharper, more professional edges */
             border: 1px solid var(--border);
             text-decoration: none;
             display: block;
             color: inherit;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
         .model-card:hover { 
-            transform: translateY(-8px);
             border-color: var(--accent);
             background: #1c2128;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        }
+        .meta {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
         }
         .model-card h2 { 
+            font-family: 'Playfair Display', serif;
             margin: 0 0 1rem 0; 
-            font-size: 1.75rem;
-            color: var(--accent);
+            font-size: 2rem;
+            color: #fff;
         }
         .model-card p {
             color: var(--text-dim);
             font-size: 1.1rem;
-        }
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            background: rgba(34, 166, 179, 0.15);
-            color: var(--accent);
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(34, 166, 179, 0.3);
+            max-width: 600px;
         }
         footer {
-            margin-top: 8rem;
-            padding: 4rem 1.5rem;
-            background: #0d1117;
+            margin-top: 10rem;
+            padding: 5rem 1.5rem;
+            background: #080a0f;
             border-top: 1px solid var(--border);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-dim);
             text-align: center;
         }
@@ -119,26 +118,28 @@
     <div class="container">
         <header class="content-header">
             <h1>Leadership Blueprint</h1>
-            <p class="subtitle">Actionable Frameworks for Modern Leaders</p>
+            <p class="subtitle">Curated Insights for the Modern Executive</p>
         </header>
 
         <main id="model-list">
             <a href="models/eisenhower-matrix.html" class="model-card">
-                <span class="tag">Productivity</span>
+                <span class="meta">Personal Productivity &bull; 5 Min Read</span>
                 <h2>The Eisenhower Matrix</h2>
-                <p>Learn how to distinguish between urgent and important tasks to maximize your impact.</p>
+                <p>A strategic framework for distinguishing between high-value impact and urgent distractions.</p>
             </a>
             <a href="models/situational-leadership.html" class="model-card">
-                <span class="tag">Management</span>
+                <span class="meta">Management Strategy &bull; 6 Min Read</span>
                 <h2>Situational Leadership</h2>
-                <p>Master the art of adapting your leadership style to match the performance readiness of your team.</p>
+                <p>The definitive model for adaptive management based on team performance readiness.</p>
             </a>
         </main>
     </div>
 
     <footer>
         <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.6;">Proprietary of Pratik Kumar Modi | Curated by AI for Business Leaders</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Proprietary Content of Pratik Kumar Modi. Frameworks adapted for digital implementation by the Leadership Blueprint team. All referenced trademarks belong to their respective owners.
+        </p>
     </footer>
 </body>
 </html>

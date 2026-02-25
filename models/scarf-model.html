@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SCARF Model | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+            --header-bg: #ffffff;
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        .top-bar { background: var(--header-bg); padding: 1.2rem 0; text-align: center; border-bottom: 4px solid var(--accent); }
+        .logo { max-width: 200px; height: auto; }
+        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
+        .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
+        .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        .hero-image { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); }
+        .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
+        .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
+        
+        .video-cta {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.youtube.com/vi/rh5E68S5vO4/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            margin: 4rem 0;
+            transition: all 0.3s ease;
+        }
+        .video-cta:hover { transform: scale(1.02); border-color: var(--accent); }
+        .play-button {
+            width: 80px; height: 80px; background: var(--accent); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; margin-bottom: 1rem;
+            box-shadow: 0 0 20px rgba(34, 166, 179, 0.5);
+        }
+        .play-icon { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
+        .video-cta span { color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        footer { margin-top: 10rem; padding: 6rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="../assets/logo.jpg" alt="AI for Business Leader" class="logo">
+    </div>
+    <div class="container">
+        <div class="metadata">Emotional Intelligence &bull; Change Management</div>
+        <h1>The SCARF Model</h1>
+        <div class="published-info">Published: Feb 2026 &bull; 7 min read &bull; Curated by Aurora</div>
+
+        <img src="../assets/scarf-model.svg" alt="The SCARF Model Visual" class="hero-image">
+        
+        <div class="meat-section">
+            <h2>The 'Why'</h2>
+            <p>Developed by David Rock, the SCARF model is based on neuroscience research. It explains how the brain treats social threats and rewards with the same intensity as physical ones. This model helps leaders collaborate better and influence others by minimizing threat responses.</p>
+            
+            <h2>Key Components</h2>
+            <ul>
+                <li><strong>Status:</strong> Relative importance to others.</li>
+                <li><strong>Certainty:</strong> Being able to predict the future.</li>
+                <li><strong>Autonomy:</strong> A sense of control over events.</li>
+                <li><strong>Relatedness:</strong> Sense of safety with others (friend vs. foe).</li>
+                <li><strong>Fairness:</strong> Perception of fair exchanges between people.</li>
+            </ul>
+
+            <div class="action-box">
+                <h3>Practical Application</h3>
+                <p>When giving feedback, you often trigger a <strong>Status</strong> threat. To minimize this, allow the employee to give themselves feedback first (increasing their <strong>Autonomy</strong>) and provide clear, consistent metrics (increasing <strong>Certainty</strong>).</p>
+            </div>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=rh5E68S5vO4" target="_blank" class="video-cta">
+            <div class="play-button">
+                <div class="play-icon"></div>
+            </div>
+            <span>Watch Neuroscience Insight on YouTube</span>
+        </a>
+
+        <footer>
+            <p>&copy; 2025 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">
+                Source: Rock, D. (2008). SCARF: A brain-based model for collaborating with and influencing others. NeuroLeadership Journal.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

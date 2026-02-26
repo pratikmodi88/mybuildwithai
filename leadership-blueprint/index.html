@@ -28,6 +28,37 @@
             background: var(--bg);
         }
         
+        /* Top Submenu / Navigation */
+        nav.main-nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 950px; /* Reduced to match About page centered feel */
+            margin: 0 auto;
+            padding: 6rem 1.5rem;
+        }
         header.content-header {
             text-align: left;
             margin-bottom: 5rem;
@@ -51,11 +82,11 @@
             letter-spacing: 0.1em;
         }
         
-        /* IMPROVED GRID SYSTEM */
+        /* THE GRID */
         #model-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .model-card {
             background: var(--card-bg);
@@ -86,10 +117,9 @@
         .model-card h2 { 
             font-family: 'Playfair Display', serif;
             margin: 0 0 1rem 0; 
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             color: #fff;
             line-height: 1.2;
-            /* FIXED ALIGNMENT: Ensures title area is consistent without cutting off */
             min-height: 4.5rem; 
             display: flex;
             align-items: flex-start;
@@ -99,21 +129,8 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin: 0;
-            flex-grow: 1; /* Pushes footer info if needed, keeps layout tidy */
+            flex-grow: 1;
         }
-        
-        .back-nav {
-            margin-bottom: 3rem;
-        }
-        .back-nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        .back-nav a:hover { color: var(--accent); }
 
         footer {
             margin-top: 10rem;
@@ -130,19 +147,23 @@
             #model-list { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
             #model-list { grid-template-columns: 1fr; }
-            .container { padding-top: 2rem; }
+            .container { padding-top: 4rem; }
             .model-card h2 { min-height: auto; }
+            nav.main-nav { gap: 1.5rem; padding: 1rem; }
+            .nav-link { font-size: 0.7rem; }
         }
     </style>
 </head>
 <body>
+    <nav class="main-nav">
+        <a href="../index.html" class="nav-link">About</a>
+        <a href="#" class="nav-link active">Leadership Blueprint</a>
+        <a href="../index.html#impact" class="nav-link">Impact</a>
+    </nav>
 
     <div class="container">
-        <nav class="back-nav">
-            <a href="../index.html">&larr; Portfolio Home</a>
-        </nav>
-
         <header class="content-header">
             <h1>Leadership Blueprint</h1>
             <p class="subtitle">Actionable Management Frameworks</p>

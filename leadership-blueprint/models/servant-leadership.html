@@ -17,6 +17,9 @@
             --border: #30363d;
         }
         body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        nav.main-nav { padding: 1.5rem 2rem; display: flex; justify-content: center; gap: 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.95); backdrop-filter: blur(10px); z-index: 1000; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
         .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
         .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
         h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
@@ -24,35 +27,32 @@
         .hero-image { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); }
         .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
         .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
-        .video-cta {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.youtube.com/vi/qp0HIF3SfI4/hqdefault.jpg');
-            background-size: cover; background-position: center; height: 400px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; border: 1px solid var(--border); margin: 4rem 0; transition: all 0.3s ease;
-        }
+        .video-cta { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.youtube.com/vi/qp0HIF3SfI4/hqdefault.jpg'); background-size: cover; background-position: center; height: 400px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; border: 1px solid var(--border); margin: 4rem 0; transition: all 0.3s ease; }
         .video-cta:hover { transform: scale(1.01); border-color: var(--accent); }
         .play-button { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
         .play-icon { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
         .video-cta span { color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
-
         .discussion-section { margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem; }
         .insight-form { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); margin-top: 2rem; }
         .insight-form textarea { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical; min-height: 150px; margin-bottom: 1.5rem; box-sizing: border-box; }
         .insight-form input { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; color: #fff; margin-bottom: 1rem; box-sizing: border-box; }
         .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
         .submit-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
         footer { margin-top: 10rem; padding: 6rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
-        @media (max-width: 768px) { h1 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; nav.main-nav { gap: 1.5rem; padding: 1rem; } .nav-link { font-size: 0.7rem; } } }
     </style>
 </head>
 <body>
+    <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">About</a>
+        <a href="../index.html" class="nav-link active">Leadership Blueprint</a>
+        <a href="../../index.html#impact" class="nav-link">Impact</a>
+    </nav>
     <div class="container">
-        <a href="../index.html" style="color: var(--text-dim); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">&larr; Back to Blueprint</a>
         <div class="metadata">Organizational Culture &bull; Ethical Leadership</div>
         <h1>Servant Leadership</h1>
         <div class="published-info">Published: Feb 2026 &bull; 5 min read &bull; Curated by Aurora</div>
-
         <img src="../../assets/servant-leadership.svg?v=3" alt="Servant Leadership Model" class="hero-image">
-        
         <div class="meat-section">
             <h2>The 'Why'</h2>
             <p>Servant leadership focuses primarily on the growth and well-being of people and the communities to which they belong.</p>
@@ -61,12 +61,10 @@
                 <p>Instead of giving orders, ask: <em>"What can I do this week to remove a barrier for you?"</em></p>
             </div>
         </div>
-
         <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4" target="_blank" class="video-cta">
             <div class="play-button"><div class="play-icon"></div></div>
             <span>Watch Executive Insight on YouTube</span>
         </a>
-
         <section class="discussion-section">
             <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">Executive Discussion</h2>
             <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your implementation insights or questions regarding this model.</p>
@@ -76,7 +74,6 @@
                 <button type="submit" class="submit-btn">Post Insight</button>
             </form>
         </section>
-
         <footer>
             <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
         </footer>

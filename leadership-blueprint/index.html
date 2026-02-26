@@ -41,7 +41,7 @@
         .corner-logo img { max-width: 140px; height: auto; display: block; }
 
         .container {
-            max-width: 1100px; /* Increased to accommodate 3 columns */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 6rem 1.5rem;
         }
@@ -67,6 +67,8 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
+        
+        /* THE GRID */
         #model-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -82,6 +84,7 @@
             flex-direction: column;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%; /* Ensure cards in a row have same height */
         }
         .model-card:hover { 
             border-color: var(--accent);
@@ -100,16 +103,21 @@
         }
         .model-card h2 { 
             font-family: 'Playfair Display', serif;
-            margin: 0 0 1rem 0; 
-            font-size: 1.5rem;
+            margin: 0 0 1.5rem 0; 
+            font-size: 1.6rem;
             color: #fff;
             line-height: 1.2;
+            min-height: 3.8rem; /* FIXED ALIGNMENT: Ensures title area is consistent */
+            display: flex;
+            align-items: flex-start;
         }
         .model-card p {
             color: var(--text-dim);
             font-size: 0.95rem;
-            margin-top: auto; /* Pushes text to bottom if title is short */
+            line-height: 1.5;
+            margin: 0;
         }
+        
         .back-nav {
             margin-bottom: 3rem;
         }
@@ -142,6 +150,7 @@
             h1 { font-size: 2.5rem; }
             #model-list { grid-template-columns: 1fr; }
             .container { padding-top: 2rem; }
+            .model-card h2 { min-height: auto; } /* Disable on mobile stack */
         }
     </style>
 </head>
@@ -161,22 +170,22 @@
         </header>
 
         <main id="model-list">
-            <a href="models/scarf-model.html" class="model-card">
+            <a href="models/scarf-model.html" class="model-card" target="_blank" rel="noopener">
                 <span class="meta">Emotional Intelligence &bull; 7 Min Read</span>
                 <h2>The SCARF Model</h2>
                 <p>The neuroscience of leadership: Understanding social threats and rewards.</p>
             </a>
-            <a href="models/servant-leadership.html" class="model-card">
+            <a href="models/servant-leadership.html" class="model-card" target="_blank" rel="noopener">
                 <span class="meta">Ethical Leadership &bull; 5 Min Read</span>
                 <h2>Servant Leadership</h2>
                 <p>Leading by putting the needs of the team first and flipping the power pyramid.</p>
             </a>
-            <a href="models/eisenhower-matrix.html" class="model-card">
+            <a href="models/eisenhower-matrix.html" class="model-card" target="_blank" rel="noopener">
                 <span class="meta">Personal Productivity &bull; 5 Min Read</span>
                 <h2>The Eisenhower Matrix</h2>
-                <p>A strategic framework for distinguishing between high-value impact and urgent distractions.</p>
+                <p>A strategic framework for distinguishing between value and urgent distractions.</p>
             </a>
-            <a href="models/situational-leadership.html" class="model-card">
+            <a href="models/situational-leadership.html" class="model-card" target="_blank" rel="noopener">
                 <span class="meta">Management Strategy &bull; 6 Min Read</span>
                 <h2>Situational Leadership</h2>
                 <p>The definitive model for adaptive management based on performance readiness.</p>

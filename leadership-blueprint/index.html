@@ -26,22 +26,30 @@
             padding: 0;
             background: var(--bg);
         }
-        .top-bar {
-            background: var(--header-bg);
-            padding: 1.2rem 0;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        
+        /* Fixed corner logo */
+        .corner-logo {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 0.8rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 100;
         }
-        .logo { max-width: 200px; height: auto; }
+        .corner-logo img { max-width: 140px; height: auto; display: block; }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 6rem 1.5rem;
         }
         header.content-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 2rem;
         }
         h1 { 
             font-family: 'Playfair Display', serif;
@@ -55,7 +63,7 @@
             color: var(--accent); 
             font-size: 1.25rem;
             font-weight: 500;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
@@ -98,6 +106,19 @@
             font-size: 1.1rem;
             max-width: 600px;
         }
+        .back-nav {
+            margin-bottom: 3rem;
+        }
+        .back-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .back-nav a:hover { color: var(--accent); }
+
         footer {
             margin-top: 10rem;
             padding: 5rem 1.5rem;
@@ -107,17 +128,25 @@
             color: var(--text-dim);
             text-align: center;
         }
+        @media (max-width: 768px) {
+            .corner-logo { position: relative; top: 0; right: 0; margin: 2rem auto; width: fit-content; }
+            h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <img src="assets/logo.jpg?v=2" alt="AI for Business Leader" class="logo">
+    <div class="corner-logo">
+        <img src="../assets/logo.jpg?v=2" alt="AI for Business Leader">
     </div>
 
     <div class="container">
+        <nav class="back-nav">
+            <a href="../index.html">&larr; Portfolio Home</a>
+        </nav>
+
         <header class="content-header">
             <h1>Leadership Blueprint</h1>
-            <p class="subtitle">Curated Insights for the Modern Executive</p>
+            <p class="subtitle">Actionable Management Frameworks</p>
         </header>
 
         <main id="model-list">

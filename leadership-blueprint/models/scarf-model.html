@@ -15,57 +15,45 @@
             --text-dim: #7d8590;
             --accent: #22a6b3;
             --border: #30363d;
-            --header-bg: #ffffff;
         }
         body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
-        .top-bar { background: var(--header-bg); padding: 1.2rem 0; text-align: center; border-bottom: 4px solid var(--accent); }
-        .logo { max-width: 200px; height: auto; }
-        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
+        
+        .corner-logo { position: absolute; top: 2rem; right: 2rem; background: white; padding: 0.8rem; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 100; }
+        .corner-logo img { max-width: 140px; height: auto; display: block; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
         .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
         h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
         .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
-        .hero-image { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); }
+        .hero-image-container { width: 100%; aspect-ratio: 3/2; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .hero-image-container img { width: 100%; height: 100%; max-height: 400px; }
         .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
         .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
         
         .video-cta {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.youtube.com/vi/rh5E68S5vO4/hqdefault.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            border: 1px solid var(--border);
-            margin: 4rem 0;
-            transition: all 0.3s ease;
+            background-size: cover; background-position: center; height: 400px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; border: 1px solid var(--border); margin: 4rem 0; transition: all 0.3s ease;
         }
-        .video-cta:hover { transform: scale(1.02); border-color: var(--accent); }
-        .play-button {
-            width: 80px; height: 80px; background: var(--accent); border-radius: 50%;
-            display: flex; justify-content: center; align-items: center; margin-bottom: 1rem;
-            box-shadow: 0 0 20px rgba(34, 166, 179, 0.5);
-        }
+        .video-cta:hover { transform: scale(1.01); border-color: var(--accent); }
+        .play-button { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
         .play-icon { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
         .video-cta span { color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 
         footer { margin-top: 10rem; padding: 6rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
+        @media (max-width: 768px) { .corner-logo { position: relative; top: 0; right: 0; margin: 2rem auto; width: fit-content; } }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <img src="../assets/logo.jpg?v=2" alt="AI for Business Leader" class="logo">
+    <div class="corner-logo">
+        <img src="../../assets/logo.jpg?v=2" alt="AI for Business Leader">
     </div>
     <div class="container">
-        <a href="../index.html" style="color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem;">&larr; Back to Blueprint</a>
+        <a href="../index.html" style="color: var(--text-dim); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">&larr; Back to Blueprint</a>
         <div class="metadata">Emotional Intelligence &bull; Change Management</div>
         <h1>The SCARF Model</h1>
         <div class="published-info">Published: Feb 2026 &bull; 7 min read &bull; Curated by Aurora</div>
 
-        <img src="../assets/scarf-model.svg?v=2" alt="The SCARF Model Visual" class="hero-image">
+        <img src="../../assets/scarf-model.svg?v=3" alt="The SCARF Model Visual" class="hero-image">
         
         <div class="meat-section">
             <h2>The 'Why'</h2>

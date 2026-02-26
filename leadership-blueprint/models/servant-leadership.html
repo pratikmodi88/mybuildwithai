@@ -32,6 +32,14 @@
         .play-button { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
         .play-icon { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
         .video-cta span { color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .discussion-section { margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem; }
+        .insight-form { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); margin-top: 2rem; }
+        .insight-form textarea { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical; min-height: 150px; margin-bottom: 1.5rem; box-sizing: border-box; }
+        .insight-form input { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; color: #fff; margin-bottom: 1rem; box-sizing: border-box; }
+        .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
+        .submit-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
         footer { margin-top: 10rem; padding: 6rem 1.5rem; background: #080a0f; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
         @media (max-width: 768px) { h1 { font-size: 2.5rem; } }
     </style>
@@ -55,23 +63,23 @@
         </div>
 
         <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4" target="_blank" class="video-cta">
-            <div class="play-button">
-                <div class="play-icon"></div>
-            </div>
+            <div class="play-button"><div class="play-icon"></div></div>
             <span>Watch Executive Insight on YouTube</span>
         </a>
 
-        <section class="discussion-section" style="margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem;">
+        <section class="discussion-section">
             <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">Executive Discussion</h2>
-            <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your insights or how you've implemented this model in your organization.</p>
-            <div style="background: rgba(255,255,255,0.02); padding: 4rem 2rem; border-radius: 8px; border: 1px dashed var(--border); text-align: center;">
-                <p style="color: var(--text-dim); font-size: 0.9rem; max-width: 400px; margin: 0 auto;">[ Discussion Module Ready ]</p>
-            </div>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your implementation insights or questions regarding this model.</p>
+            <form class="insight-form">
+                <input type="text" placeholder="Your Name or Role" required>
+                <textarea placeholder="Write your insight here..." required></textarea>
+                <button type="submit" class="submit-btn">Post Insight</button>
+            </form>
         </section>
 
         <footer>
             <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
         </footer>
     </div>
-<!-- Build: 1772094047 --></body>
+</body>
 </html>

@@ -17,70 +17,29 @@
             --border: #30363d;
         }
         body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
-        
-        /* Top Submenu / Navigation */
-        nav.main-nav {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: rgba(11, 14, 20, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-        .nav-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            transition: all 0.3s ease;
-        }
+        nav.main-nav { padding: 1.5rem 2rem; display: flex; justify-content: center; gap: 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.95); backdrop-filter: blur(10px); z-index: 1000; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
         .nav-link:hover, .nav-link.active { color: var(--accent); }
-
         .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
         .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
         h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
         .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
         
-        /* Standardized Hero Image Container */
         .hero-image-container { 
-            width: 100%; 
-            border-radius: 12px; 
-            border: 1px solid var(--border); 
-            margin: 2rem 0; 
-            background: var(--card-bg); 
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
+            width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); padding: 2rem; display: flex; justify-content: center;
         }
         .hero-image-container svg { width: 100%; height: auto; max-width: 600px; }
 
         .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
         .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
         
-        /* BULLETPROOF VIDEO CTA: Using standard IMG tag for stability */
         .video-cta {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 400px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            text-decoration: none;
-            margin: 4rem 0;
-            transition: all 0.3s ease;
+            position: relative; display: block; width: 100%; height: 400px; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; text-decoration: none; margin: 4rem 0; transition: all 0.3s ease;
         }
         .video-cta:hover { transform: scale(1.01); border-color: var(--accent); }
         .video-cta img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
         .video-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
         .play-button { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
@@ -93,6 +52,7 @@
         .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
 
         footer { padding: 4rem 1.5rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; background: #080a0f; }
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav.main-nav { gap: 1.5rem; padding: 1rem; } .nav-link { font-size: 0.7rem; } }
     </style>
 </head>
 <body>
@@ -108,7 +68,6 @@
         <div class="published-info">Published: Feb 2026 &bull; 6 min read &bull; Curated by Aurora</div>
 
         <div class="hero-image-container">
-            <!-- EMBEDDED SVG FOR 100% RELIABILITY -->
             <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="400" fill="#161b22" rx="12"/>
               <line x1="300" y1="50" x2="300" y2="350" stroke="#30363d" stroke-width="2"/>
@@ -139,11 +98,12 @@
             </div>
         </div>
 
-        <a href="https://www.youtube.com/watch?v=vbFizKChM-g" target="_blank" class="video-cta">
-            <img src="https://img.youtube.com/vi/vbFizKChM-g/hqdefault.jpg" alt="Video Thumbnail">
+        <!-- VERIFIED FLAGSHIP VIDEO ID -->
+        <a href="https://www.youtube.com/watch?v=O7X7_G3TfS0" target="_blank" class="video-cta">
+            <img src="https://img.youtube.com/vi/O7X7_G3TfS0/hqdefault.jpg" alt="Video Thumbnail">
             <div class="video-overlay">
                 <div class="play-button"><div class="play-icon"></div></div>
-                <span>Watch Executive Insight on YouTube</span>
+                <span>Watch Official Executive Insight on YouTube</span>
             </div>
         </a>
 

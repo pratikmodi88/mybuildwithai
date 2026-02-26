@@ -41,7 +41,7 @@
         .corner-logo img { max-width: 140px; height: auto; display: block; }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px; /* Increased to accommodate 3 columns */
             margin: 0 auto;
             padding: 6rem 1.5rem;
         }
@@ -69,15 +69,17 @@
         }
         #model-list {
             display: grid;
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
         .model-card {
             background: var(--card-bg);
-            padding: 3rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 4px;
             border: 1px solid var(--border);
             text-decoration: none;
-            display: block;
+            display: flex;
+            flex-direction: column;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -88,23 +90,25 @@
             transform: translateY(-5px);
         }
         .meta {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: var(--accent);
             text-transform: uppercase;
             font-weight: 700;
             margin-bottom: 1rem;
             display: block;
+            letter-spacing: 0.05em;
         }
         .model-card h2 { 
             font-family: 'Playfair Display', serif;
             margin: 0 0 1rem 0; 
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #fff;
+            line-height: 1.2;
         }
         .model-card p {
             color: var(--text-dim);
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 0.95rem;
+            margin-top: auto; /* Pushes text to bottom if title is short */
         }
         .back-nav {
             margin-bottom: 3rem;
@@ -128,9 +132,16 @@
             color: var(--text-dim);
             text-align: center;
         }
+
+        /* Responsive Grid */
+        @media (max-width: 1000px) {
+            #model-list { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .corner-logo { position: relative; top: 0; right: 0; margin: 2rem auto; width: fit-content; }
             h1 { font-size: 2.5rem; }
+            #model-list { grid-template-columns: 1fr; }
+            .container { padding-top: 2rem; }
         }
     </style>
 </head>
@@ -153,12 +164,12 @@
             <a href="models/scarf-model.html" class="model-card">
                 <span class="meta">Emotional Intelligence &bull; 7 Min Read</span>
                 <h2>The SCARF Model</h2>
-                <p>The neuroscience of leadership: Understanding how the brain responds to social threats and rewards.</p>
+                <p>The neuroscience of leadership: Understanding social threats and rewards.</p>
             </a>
             <a href="models/servant-leadership.html" class="model-card">
                 <span class="meta">Ethical Leadership &bull; 5 Min Read</span>
                 <h2>Servant Leadership</h2>
-                <p>The philosophy of leading by putting the needs of the team first and flipping the traditional power pyramid.</p>
+                <p>Leading by putting the needs of the team first and flipping the power pyramid.</p>
             </a>
             <a href="models/eisenhower-matrix.html" class="model-card">
                 <span class="meta">Personal Productivity &bull; 5 Min Read</span>
@@ -168,7 +179,7 @@
             <a href="models/situational-leadership.html" class="model-card">
                 <span class="meta">Management Strategy &bull; 6 Min Read</span>
                 <h2>Situational Leadership</h2>
-                <p>The definitive model for adaptive management based on team performance readiness.</p>
+                <p>The definitive model for adaptive management based on performance readiness.</p>
             </a>
         </main>
     </div>

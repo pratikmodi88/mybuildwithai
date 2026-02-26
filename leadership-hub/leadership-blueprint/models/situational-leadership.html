@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situational Leadership | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        nav.main-nav { padding: 1.5rem 2rem; display: flex; justify-content: center; gap: 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.95); backdrop-filter: blur(10px); z-index: 1000; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
+        .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
+        .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
+        .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        
+        /* DIRECT SVG EMBEDDING CONTAINER */
+        .hero-image-container { 
+            width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); padding: 2rem; display: flex; justify-content: center;
+        }
+        .hero-image-container svg { width: 100%; height: auto; max-width: 600px; display: block; }
+
+        .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
+        .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
+        
+        .video-cta {
+            position: relative; display: block; width: 100%; height: 400px; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; text-decoration: none; margin: 4rem 0; transition: all 0.3s ease;
+        }
+        .video-cta:hover { transform: scale(1.01); border-color: var(--accent); }
+        .video-cta img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+        .video-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .play-button { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
+        .play-icon { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
+        .video-overlay span { color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .discussion-section { margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem; }
+        .insight-form { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); margin-top: 2rem; }
+        .insight-form textarea, .insight-form input { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; color: #fff; margin-bottom: 1rem; box-sizing: border-box; }
+        .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
+
+        footer { padding: 4rem 1.5rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; background: #080a0f; }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">About</a>
+        <a href="../index.html" class="nav-link active">Leadership Blueprint</a>
+        <a href="../../index.html#impact" class="nav-link">Impact</a>
+    </nav>
+
+    <div class="container">
+        <div class="metadata">Management Strategy &bull; Leadership Essentials</div>
+        <h1>Situational Leadership® II</h1>
+        <div class="published-info">Published: Feb 2026 &bull; 6 min read &bull; Curated by Aurora</div>
+
+        <div class="hero-image-container">
+            <!-- EMBEDDED SVG -->
+            <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="400" fill="#161b22" rx="12"/>
+              <line x1="300" y1="50" x2="300" y2="350" stroke="#30363d" stroke-width="2"/>
+              <line x1="100" y1="200" x2="500" y2="200" stroke="#30363d" stroke-width="2"/>
+              <text x="300" y="380" fill="#7d8590" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">TEAM MEMBER COMPETENCE &amp; COMMITMENT &rarr;</text>
+              <text x="20" y="200" fill="#7d8590" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" transform="rotate(-90 20,200)">LEADER DIRECTION &rarr;</text>
+              <rect x="110" y="60" width="180" height="130" rx="8" fill="rgba(34, 197, 94, 0.1)" stroke="rgba(34, 197, 94, 0.3)"/>
+              <text x="200" y="115" fill="#fff" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">S3</text>
+              <text x="200" y="145" fill="#7d8590" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Supporting</text>
+              <rect x="310" y="60" width="180" height="130" rx="8" fill="rgba(245, 158, 11, 0.1)" stroke="rgba(245, 158, 11, 0.3)"/>
+              <text x="400" y="115" fill="#fff" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">S2</text>
+              <text x="400" y="145" fill="#7d8590" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Coaching</text>
+              <rect x="110" y="210" width="180" height="130" rx="8" fill="rgba(59, 130, 246, 0.1)" stroke="rgba(59, 130, 246, 0.3)"/>
+              <text x="200" y="265" fill="#fff" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">S4</text>
+              <text x="200" y="295" fill="#7d8590" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Delegating</text>
+              <rect x="310" y="210" width="180" height="130" rx="8" fill="rgba(239, 68, 68, 0.1)" stroke="rgba(239, 68, 68, 0.3)"/>
+              <text x="400" y="265" fill="#fff" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">S1</text>
+              <text x="400" y="295" fill="#7d8590" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Directing</text>
+            </svg>
+        </div>
+        
+        <div class="meat-section">
+            <h2>The 'Why'</h2>
+            <p>One leadership style does not fit all. This model provides a framework to adapt behavior based on the specific maturity and skill level of your team members.</p>
+            <div class="action-box">
+                <h3>Practical Application</h3>
+                <p>Map your team member to a quadrant. If they have mastered a task, shift from <strong>Coaching</strong> to <strong>Supporting</strong> to build confidence through autonomy.</p>
+            </div>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=vbFizKChM-g" target="_blank" class="video-cta">
+            <img src="https://img.youtube.com/vi/vbFizKChM-g/hqdefault.jpg" alt="Video Thumbnail">
+            <div class="video-overlay">
+                <div class="play-button"><div class="play-icon"></div></div>
+                <span>Watch Executive Insight on YouTube</span>
+            </div>
+        </a>
+
+        <section class="discussion-section">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">Executive Discussion</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your implementation insights or questions regarding this model.</p>
+            <form class="insight-form"><input type="text" placeholder="Your Name or Role" required><textarea placeholder="Write your insight here..." required></textarea><button type="submit" class="submit-btn">Post Insight</button></form>
+        </section>
+    </div>
+
+    <footer><p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p><p style="margin-top: 0.5rem; opacity: 0.4;">mybuildwithai.com</p></footer>
+</body>
+</html>

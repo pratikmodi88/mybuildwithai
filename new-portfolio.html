@@ -17,13 +17,13 @@
             --border: #30363d;
         }
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.7; 
-            color: var(--text-main); 
-            background: var(--bg); 
-            margin: 0; 
-            padding: 0; 
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
             word-wrap: break-word;
         }
 
@@ -52,7 +52,7 @@
             letter-spacing: 0.15em;
             margin: 0 1.5rem;
             transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .nav-link:hover, .nav-link.active {
             color: var(--accent);
@@ -68,22 +68,22 @@
             justify-content: center;
             text-align: center;
         }
-        .hero-section h1 { 
+        .hero-section h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem; 
-            margin: 0; 
-            color: #fff; 
-            line-height: 1.1; 
-            letter-spacing: -0.02em; 
+            font-size: 4.5rem;
+            margin: 0;
+            color: #fff;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
             max-width: 800px;
         }
-        .hero-section p.lead { 
-            font-family: 'Inter', sans-serif;
-            font-size: 1.75rem; 
-            color: var(--accent); 
-            margin-top: 1.5rem; 
-            font-weight: 500; 
-            letter-spacing: 0.05em; 
+        .hero-section p.lead {
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
+            font-size: 1.75rem;
+            color: var(--accent);
+            margin-top: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             max-width: 800px;
         }
         .profile-image {
@@ -97,7 +97,7 @@
             box-shadow: 0 0 0 8px rgba(34, 166, 179, 0.2);
         }
         .hero-description {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
             font-size: 1.15rem;
             color: var(--text-dim);
             max-width: 700px;
@@ -121,9 +121,12 @@
             font-size: 1.1rem;
             color: var(--text-main);
             line-height: 1.8;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
-        .about-content p strong { color: var(--accent); font-family: 'Inter', sans-serif; }
+        .about-content p strong { 
+            color: var(--accent); 
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
+        }
 
         /* Expertise Section */
         .expertise-section h2 {
@@ -157,13 +160,13 @@
             font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 0.75rem;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif; /* Explicitly Playfair */
         }
         .expertise-card p { 
             color: var(--text-dim); 
             font-size: 0.95rem; 
             line-height: 1.6;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
 
         /* Experience Section */
@@ -185,7 +188,7 @@
         }
         .experience-item:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .experience-item h3 { 
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif; /* Explicitly Playfair */
             color: var(--text-main);
             font-size: 2rem;
             margin-top: 0;
@@ -197,14 +200,14 @@
             margin-bottom: 1rem;
             display: block;
             font-size: 1.1rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .experience-item .duration { 
             color: var(--text-dim); 
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
             display: block;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .experience-item ul { list-style: none; padding: 0; margin: 0; }
         .experience-item ul li {
@@ -213,7 +216,7 @@
             margin-bottom: 0.75rem;
             position: relative;
             padding-left: 1.5rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .experience-item ul li::before {
             content: '&raquo;'; /* Custom bullet */
@@ -233,7 +236,7 @@
             margin-top: 6rem;
         }
         .blueprint-cta h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif; /* Explicitly Playfair */
             font-size: 2.8rem;
             color: #fff;
             margin-bottom: 1.5rem;
@@ -244,7 +247,7 @@
             max-width: 700px;
             margin: 0 auto 2.5rem auto;
             line-height: 1.7;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .btn {
             display: inline-block;
@@ -258,7 +261,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
 
@@ -276,7 +279,7 @@
             color: var(--text-main);
             margin-bottom: 2rem;
             text-align: center;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .contact-info a {
             color: var(--accent);
@@ -284,7 +287,7 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin: 0 1rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         .contact-info a:hover { text-decoration: underline; }
 
@@ -299,7 +302,7 @@
         }
         footer p {
             margin: 0.5rem 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Explicitly Inter */
         }
         footer p strong { color: var(--text-main); font-family: 'Inter', sans-serif; }
         footer span { color: var(--accent); font-weight: 600; font-family: 'Inter', sans-serif; }

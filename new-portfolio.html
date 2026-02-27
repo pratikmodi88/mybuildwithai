@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Kumar Modi | Strategic Product & Digital Transformation Leader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+        }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            background: var(--bg); 
+            margin: 0; 
+            padding: 0; 
+            word-wrap: break-word;
+        }
+
+        /* Global */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .section-padding { padding: 6rem 0; }
+        .text-center { text-align: center; }
+
+        /* Navigation */
+        nav.main-nav {
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .nav-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--bg);
+            padding: 10rem 1.5rem 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-section h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem; 
+            margin: 0; 
+            color: #fff; 
+            line-height: 1.1; 
+            letter-spacing: -0.02em; 
+            max-width: 800px;
+        }
+        .hero-section p.lead { 
+            font-size: 1.75rem; 
+            color: var(--accent); 
+            margin-top: 1.5rem; 
+            font-weight: 500; 
+            letter-spacing: 0.05em; 
+            max-width: 800px;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 2rem;
+            box-shadow: 0 0 0 8px rgba(34, 166, 179, 0.2);
+        }
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 2.5rem auto;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-section h2, .expertise-section h2, .experience-section h2, .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+        .about-content p strong { color: var(--accent); }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .expertise-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .expertise-card:hover { 
+            border-color: var(--accent);
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .expertise-card h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .expertise-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .experience-item:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .experience-item h3 { 
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item .role { 
+            color: var(--accent); 
+            font-weight: 600; 
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 1.1rem;
+        }
+        .experience-item .duration { 
+            color: var(--text-dim); 
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .experience-item ul { list-style: none; padding: 0; margin: 0; }
+        .experience-item ul li {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .experience-item ul li::before {
+            content: '&raquo;'; /* Custom bullet */
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Leadership Blueprint CTA */
+        .blueprint-cta {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        .blueprint-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .blueprint-cta p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.7;
+        }
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 1.2rem 3.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
+
+        /* Contact Section */
+        .contact-section p.lead {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 1rem;
+        }
+        .contact-info a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            background: #080a0f;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer p strong { color: var(--text-main); }
+        footer span { color: var(--accent); font-weight: 600; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 3rem; }
+            .hero-section p.lead { font-size: 1.4rem; }
+            .about-section h2, .expertise-section h2, .experience-section h2, .contact-section h2 { font-size: 2.5rem; }
+            nav.main-nav .nav-link { margin: 0 0.8rem; font-size: 0.8rem; }
+            .section-padding { padding: 4rem 0; }
+            .expertise-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#hero" class="nav-link active">About</a>
+            <a href="#expertise" class="nav-link">Expertise</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="leadership-blueprint/index.html" class="nav-link">Blueprint</a>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <!-- Placeholder for a professional profile image -->
+            <img src="https://placehold.co/180x180/30363d/e6edf3?text=Profile" alt="Pratik Kumar Modi Profile" class="profile-image">
+            <h1>Pratik Kumar Modi</h1>
+            <p class="lead">Strategic Product & Digital Transformation Leader</p>
+            <p class="hero-description">
+                With over 16 years of proven experience, I am a results-driven Strategic Product & Digital Transformation Leader specializing in leveraging <strong>AI, Data Platforms, and Automation</strong> to drive significant business value. My passion lies in <strong>making work smarter with cutting-edge GenAI (RAG frameworks)</strong> and empowering decision-making through compelling <strong>data storytelling</strong>. Currently, as an Engineering Manager at Deloitte, I lead global delivery and modernization initiatives, and I'm actively seeking new leadership opportunities to architect future-ready digital strategies with AI at their core.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-section section-padding">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    My career is dedicated to bridging the gap between innovative technology and tangible business outcomes. I thrive on leading complex digital transformations, building robust data ecosystems, and harnessing the power of Artificial Intelligence to create smarter, more efficient processes.
+                </p>
+                <p>
+                    With a deep understanding of both technical roadmaps and strategic business value, I excel at defining and executing product visions that deliver measurable impact. My leadership philosophy is rooted in empowering teams, fostering a culture of continuous learning, and driving innovation through a blend of cutting-edge technology and astute problem-solving.
+                </p>
+                <p>
+                    Beyond the technical, I believe in the power of clarity. I am passionate about <strong>data storytelling</strong>—translating complex insights into compelling narratives that inform strategy and inspire action. Whether it's developing new AI products or optimizing existing platforms, my focus is always on creating solutions that are not just technically sound, but strategically impactful.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise-section section-padding" id="expertise">
+        <div class="container">
+            <h2>Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>Artificial Intelligence & GenAI</h3>
+                    <p>Designing and implementing AI/ML solutions, including RAG frameworks, for enhanced business intelligence and operational efficiency.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Digital Transformation & Strategy</h3>
+                    <p>Architecting and executing enterprise-wide digital strategies, driving innovation and competitive advantage.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Data Platforms & Analytics</h3>
+                    <p>Building robust data ecosystems and leveraging analytics for informed decision-making and performance optimization.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Automation & Process Optimization</h3>
+                    <p>Streamlining operations and enhancing productivity through intelligent automation and process re-engineering.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Data Storytelling & Visualization</h3>
+                    <p>Translating complex data into clear, compelling narratives that drive strategic action and stakeholder engagement.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Leadership & Team Empowerment</h3>
+                    <p>Building and empowering high-performing global teams, fostering a culture of innovation and continuous improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section section-padding" id="experience">
+        <div class="container">
+            <h2>Experience & Career Highlights</h2>
+            <div class="experience-item">
+                <h3>Engineering Manager, Deloitte</h3>
+                <span class="role">Digital Transformation & AI Solutions</span>
+                <span class="duration">[Start Date] &mdash; Present</span>
+                <ul>
+                    <li>Led global engineering teams in delivering high-impact digital transformation projects.</li>
+                    <li>Spearheaded the integration of AI/ML capabilities into core product offerings, resulting in [Quantifiable Impact].</li>
+                    <li>Drove significant operational efficiencies through automation and process re-engineering across multiple business units.</li>
+                    <li>Mentored and developed a diverse team of [Number] engineers, fostering a culture of innovation and excellence.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>[Previous Role Title], [Previous Company]</h3>
+                <span class="role">[Key Responsibilities/Focus Area]</span>
+                <span class="duration">[Start Date] &mdash; [End Date]</span>
+                <ul>
+                    <li>[Quantifiable achievement 1]</li>
+                    <li>[Quantifiable achievement 2]</li>
+                    <li>[Key project or initiative]</li>
+                </ul>
+            </div>
+            <!-- Add more experience items as needed -->
+        </div>
+    </section>
+
+    <section class="blueprint-cta section-padding">
+        <div class="container">
+            <h2>Explore My Leadership Blueprint</h2>
+            <p>
+                Dive deeper into actionable management frameworks and AI implementation strategies, curated to empower modern leaders and drive innovation.
+            </p>
+            <a href="leadership-blueprint/index.html" class="btn">View Blueprint</a>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="lead">I'm actively seeking leadership roles in Digital Transformation and GenAI Strategy. Let's connect to discuss how I can help your organization thrive.</p>
+            <div class="contact-info">
+                <a href="mailto:Pratik.k.modi@outlook.com">Email: Pratik.k.modi@outlook.com</a>
+                <!-- Add more contact links if desired, e.g., LinkedIn -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">
+                This portfolio is dynamically curated with the assistance of Aurora, an advanced AI system.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -52,6 +52,7 @@
             letter-spacing: 0.15em;
             margin: 0 1.5rem;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
         .nav-link:hover, .nav-link.active {
             color: var(--accent);
@@ -77,6 +78,7 @@
             max-width: 800px;
         }
         .hero-section p.lead { 
+            font-family: 'Inter', sans-serif;
             font-size: 1.75rem; 
             color: var(--accent); 
             margin-top: 1.5rem; 
@@ -89,12 +91,13 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: 50% 10%;
+            object-position: 50% -40%; /* Adjusted to move image up */
             border: 4px solid var(--accent);
             margin-bottom: 2rem;
             box-shadow: 0 0 0 8px rgba(34, 166, 179, 0.2);
         }
         .hero-description {
+            font-family: 'Inter', sans-serif;
             font-size: 1.15rem;
             color: var(--text-dim);
             max-width: 700px;
@@ -103,7 +106,7 @@
         }
 
         /* About Section */
-        .about-section h2, .expertise-section h2, .experience-section h2, .contact-section h2 {
+        .about-section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             color: #fff;
@@ -118,10 +121,19 @@
             font-size: 1.1rem;
             color: var(--text-main);
             line-height: 1.8;
+            font-family: 'Inter', sans-serif;
         }
-        .about-content p strong { color: var(--accent); }
+        .about-content p strong { color: var(--accent); font-family: 'Inter', sans-serif; }
 
         /* Expertise Section */
+        .expertise-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
         .expertise-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -147,9 +159,22 @@
             margin-bottom: 0.75rem;
             font-family: 'Playfair Display', serif;
         }
-        .expertise-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+        .expertise-card p { 
+            color: var(--text-dim); 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
 
         /* Experience Section */
+        .experience-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
         .experience-item {
             background: var(--card-bg);
             padding: 2.5rem;
@@ -172,12 +197,14 @@
             margin-bottom: 1rem;
             display: block;
             font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
         }
         .experience-item .duration { 
             color: var(--text-dim); 
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
             display: block;
+            font-family: 'Inter', sans-serif;
         }
         .experience-item ul { list-style: none; padding: 0; margin: 0; }
         .experience-item ul li {
@@ -186,6 +213,7 @@
             margin-bottom: 0.75rem;
             position: relative;
             padding-left: 1.5rem;
+            font-family: 'Inter', sans-serif;
         }
         .experience-item ul li::before {
             content: '&raquo;'; /* Custom bullet */
@@ -216,6 +244,7 @@
             max-width: 700px;
             margin: 0 auto 2.5rem auto;
             line-height: 1.7;
+            font-family: 'Inter', sans-serif;
         }
         .btn {
             display: inline-block;
@@ -229,15 +258,25 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
         .btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
 
         /* Contact Section */
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
         .contact-section p.lead {
             font-size: 1.2rem;
             color: var(--text-main);
             margin-bottom: 2rem;
             text-align: center;
+            font-family: 'Inter', sans-serif;
         }
         .contact-info a {
             color: var(--accent);
@@ -245,6 +284,7 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin: 0 1rem;
+            font-family: 'Inter', sans-serif;
         }
         .contact-info a:hover { text-decoration: underline; }
 
@@ -259,16 +299,17 @@
         }
         footer p {
             margin: 0.5rem 0;
+            font-family: 'Inter', sans-serif;
         }
-        footer p strong { color: var(--text-main); }
-        footer span { color: var(--accent); font-weight: 600; }
+        footer p strong { color: var(--text-main); font-family: 'Inter', sans-serif; }
+        footer span { color: var(--accent); font-weight: 600; font-family: 'Inter', sans-serif; }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .hero-section h1 { font-size: 3rem; }
-            .hero-section p.lead { font-size: 1.4rem; }
+            .hero-section p.lead { font-family: 'Inter', sans-serif; font-size: 1.4rem; }
             .about-section h2, .expertise-section h2, .experience-section h2, .contact-section h2 { font-size: 2.5rem; }
-            nav.main-nav .nav-link { margin: 0 0.8rem; font-size: 0.8rem; }
+            nav.main-nav .nav-link { margin: 0 0.8rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; }
             .section-padding { padding: 4rem 0; }
             .expertise-grid { grid-template-columns: 1fr; }
         }

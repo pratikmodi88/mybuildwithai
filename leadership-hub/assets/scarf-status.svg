@@ -1,6 +1,0 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#161b22" rx="8"/>
-  <circle cx="200" cy="100" r="60" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8" stroke-width="2"/>
-  <text x="200" y="110" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#38bdf8" text-anchor="middle">STATUS</text>
-  <text x="200" y="150" font-family="Inter, sans-serif" font-size="14" fill="#7d8590" text-anchor="middle">Recognition &amp; Importance</text>
-</svg>

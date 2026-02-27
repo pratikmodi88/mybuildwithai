@@ -1,8 +1,0 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#161b22" rx="8"/>
-  <rect x="100" y="80" width="80" height="80" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2"/>
-  <rect x="220" y="80" width="80" height="80" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2"/>
-  <line x1="180" y1="120" x2="220" y2="120" stroke="#ef4444" stroke-width="2"/>
-  <text x="200" y="110" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#ef4444" text-anchor="middle">FAIRNESS</text>
-  <text x="200" y="150" font-family="Inter, sans-serif" font-size="14" fill="#7d8590" text-anchor="middle">Equity &amp; Justice</text>
-</svg>

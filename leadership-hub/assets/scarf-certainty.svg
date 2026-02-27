@@ -1,8 +1,0 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#161b22" rx="8"/>
-  <path d="M100 100 L200 50 L300 100 L200 150 Z" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="2"/>
-  <line x1="150" y1="100" x2="250" y2="100" stroke="#22c55e" stroke-width="2"/>
-  <line x1="200" y1="75" x2="200" y2="125" stroke="#22c55e" stroke-width="2"/>
-  <text x="200" y="110" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#22c55e" text-anchor="middle">CERTAINTY</text>
-  <text x="200" y="150" font-family="Inter, sans-serif" font-size="14" fill="#7d8590" text-anchor="middle">Clarity &amp; Predictability</text>
-</svg>

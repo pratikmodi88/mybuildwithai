@@ -1,7 +1,0 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#161b22" rx="8"/>
-  <path d="M100 100 L150 50 L250 150 L300 100" fill="none" stroke="#f59e0b" stroke-width="2"/>
-  <circle cx="200" cy="100" r="40" fill="rgba(245, 158, 11, 0.1)" stroke="#f59e0b" stroke-width="2"/>
-  <text x="200" y="110" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#f59e0b" text-anchor="middle">AUTONOMY</text>
-  <text x="200" y="150" font-family="Inter, sans-serif" font-size="14" fill="#7d8590" text-anchor="middle">Control &amp; Choice</text>
-</svg>

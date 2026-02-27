@@ -116,6 +116,43 @@
             color: var(--text-dim);
             max-width: 600px;
         }
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .btn-hero {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .btn-linkedin {
+            background: #0077b5;
+            color: #fff;
+            border: 1px solid #0077b5;
+        }
+        .btn-linkedin:hover {
+            background: #005a8a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .btn-email {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+        .btn-email:hover {
+            background: var(--accent);
+            color: #0b0e14;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
 
         /* Narrative Section */
         .narrative { padding: 8rem 0; background: #0d1117; }
@@ -226,6 +263,10 @@
                 <p class="hero-lead">
                     Strategic Product Leader with 16+ years of experience bridging technical roadmaps with measurable business outcomes. Currently Engineering Manager at Deloitte.
                 </p>
+                <div class="hero-btns">
+                    <a href="https://www.linkedin.com/in/pratikkumarmodi/" target="_blank" class="btn-hero btn-linkedin">LinkedIn</a>
+                    <a href="mailto:pratik.k.modi@outlook.com" class="btn-hero btn-email">Email Me</a>
+                </div>
             </div>
         </section>
     </div>

@@ -87,8 +87,68 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
+            margin-bottom: 8rem;
         }
-        .model-card {
+        
+        /* Subscribe Section */
+        .subscribe-section {
+            background: rgba(34, 166, 179, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .subscribe-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .subscribe-section p {
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .subscribe-form {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .subscribe-form input {
+            background: #0b0e14;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.8rem 1.2rem;
+            color: #fff;
+            width: 100%;
+            max-width: 300px;
+            font-family: inherit;
+        }
+        .subscribe-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .subscribe-btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .subscribe-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        footer {
             background: var(--card-bg);
             padding: 2.5rem 1.5rem;
             border-radius: 4px;
@@ -219,6 +279,15 @@
                 <p>Prioritizing long-term objectives and guiding organizations toward sustainable success through foresight.</p>
             </a>
         </main>
+
+        <section class="subscribe-section">
+            <h2>Stay Ahead of the Curve</h2>
+            <p>Subscribe to receive a notification whenever a new leadership model is added to this library.</p>
+            <form class="subscribe-form" action="#" method="POST">
+                <input type="email" placeholder="Your work email" required>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </section>
     </div>
 
     <footer>

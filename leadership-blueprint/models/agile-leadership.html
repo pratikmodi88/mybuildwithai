@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agile Leadership | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        nav.main-nav { padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.8); backdrop-filter: blur(12px); z-index: 1000; }
+        .nav-content { display: flex; justify-content: center; gap: 3rem; align-items: center; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.3s; font-family: 'Inter', sans-serif; position: relative; }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
+
+        /* Dropdown Menu */
+        .nav-item-dropdown { position: relative; display: inline-block; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(22, 27, 34, 0.95); border: 1px solid var(--border); border-radius: 4px; box-shadow: var(--card-shadow); padding: 0.5rem 0; min-width: 220px; backdrop-filter: blur(12px); z-index: 1001; }
+        .dropdown-menu::before { content: ""; position: absolute; top: -15px; left: 0; width: 100%; height: 15px; background: transparent; }
+        .nav-item-dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-link { display: block; padding: 0.8rem 1.5rem; color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.2s; white-space: nowrap; }
+        .dropdown-link:hover { background: rgba(34, 166, 179, 0.1); color: var(--accent); }
+        .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
+        .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
+        .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        .hero-image-container { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); padding: 2rem; display: flex; justify-content: center; }
+        .hero-image-container svg { width: 100%; height: auto; max-width: 600px; }
+        .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
+        .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
+        .discussion-section { margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem; }
+        .insight-form { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); margin-top: 2rem; }
+        .insight-form textarea, .insight-form input { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; color: #fff; margin-bottom: 1rem; box-sizing: border-box; }
+        .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
+        footer { padding: 4rem 1.5rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; background: #080a0f; }
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav.main-nav { gap: 1.5rem; padding: 1rem; } .nav-link { font-size: 0.7rem; } }
+    </style>
+</head>
+<body>
+        <nav class="main-nav">
+        <div class="nav-content">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/#impact" class="nav-link">Impact</a>
+            <a href="/#highlights" class="nav-link">Highlights</a>
+            
+            <div class="nav-item-dropdown">
+                <a href="#" class="nav-link active">My Projects <span style="font-size: 0.6rem; opacity: 0.6;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="/leadership-blueprint/" class="dropdown-link active">Leadership Blueprint</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+        <div class="metadata">Management</div>
+        <h1>Agile Leadership</h1>
+        <div class="published-info">Published: Feb 2026 &bull; 6 min read &bull; Curated by Aurora</div>
+        <div class="hero-image-container">
+            <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="400" fill="var(--card-bg)" rx="12"/>
+                <!-- Central dynamic loop representing agility -->
+                <circle cx="300" cy="200" r="100" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="10 5" opacity="0.5"/>
+                
+                <!-- Circular segments -->
+                <path d="M300 100 A100 100 0 0 1 400 200" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round"/>
+                <path d="M400 200 A100 100 0 0 1 300 300" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+                <path d="M300 300 A100 100 0 0 1 200 200" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+                <path d="M200 200 A100 100 0 0 1 300 100" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+
+                <!-- Icons or Markers for the phases -->
+                <circle cx="300" cy="100" r="15" fill="var(--accent)"/>
+                <circle cx="400" cy="200" r="15" fill="var(--accent)"/>
+                <circle cx="300" cy="300" r="15" fill="var(--accent)"/>
+                <circle cx="200" cy="200" r="15" fill="var(--accent)"/>
+
+                <text x="300" y="208" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">AGILE</text>
+                <text x="300" y="370" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="16" text-anchor="middle">CONTINUOUS ADAPTATION LOOP</text>
+            </svg>
+        </div>
+        <div class="meat-section">
+            <h2>The 'Why': Understanding Agile Leadership</h2>
+            <p>Agile Leadership is a transformative approach vital for navigating the complexities and rapid changes of the 21st-century business landscape. Unlike traditional command-and-control models, it fosters a culture of adaptability, collaboration, and continuous improvement, empowering individuals and teams to respond swiftly to market shifts and customer needs.</p>
+            <p>The core of Agile Leadership lies in shifting from a "fixed" mindset to a "growth" mindset, where failure is seen as a learning opportunity and speed is balanced with strategic foresight. It focuses on removing bottlenecks rather than controlling every move, allowing the organization to operate as a network of empowered teams rather than a rigid hierarchy.</p>
+
+            <h3>The Four Key Pillars:</h3>
+            <h4>1. Mindset Shift: From Heroic to Post-Heroic</h4>
+            <p>The first step is a fundamental shift in how a leader views their role. Instead of being the "hero" who has all the answers and makes all the decisions, the agile leader becomes a facilitator and coach. This "post-heroic" stance prioritizes collective intelligence over individual dominance, fostering an environment where every team member feels responsible for the outcome.</p>
+            <svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <g opacity="0.3">
+                    <circle cx="150" cy="150" r="40" fill="var(--text-dim)"/>
+                    <text x="150" y="220" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Traditional (Heroic)</text>
+                </g>
+                <path d="M250 175 L350 175" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <g>
+                    <circle cx="450" cy="130" r="20" fill="var(--accent)"/>
+                    <circle cx="410" cy="170" r="20" fill="var(--accent)"/>
+                    <circle cx="490" cy="170" r="20" fill="var(--accent)"/>
+                    <circle cx="450" cy="210" r="20" fill="var(--accent)"/>
+                    <text x="450" y="260" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Agile (Networked)</text>
+                </g>
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent)" />
+                    </marker>
+                </defs>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Shifting from a single decision-maker to a distributed network of leadership.</em></p>
+
+            <h4>2. Empowerment and Self-Organization</h4>
+            <p>Agile leaders empower teams by delegating authority, fostering autonomy, and trusting them to make decisions and solve problems independently. This doesn't mean a lack of direction; rather, it means providing the "What" and "Why" while letting the team figure out the "How." This autonomy leads to higher engagement and faster execution.</p>
+            <svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <circle cx="300" cy="175" r="80" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 5"/>
+                <circle cx="300" cy="175" r="30" fill="var(--accent)"/>
+                <line x1="300" y1="175" x2="300" y2="75" stroke="var(--text-main)" stroke-width="2"/>
+                <line x1="300" y1="175" x2="400" y2="175" stroke="var(--text-main)" stroke-width="2"/>
+                <line x1="300" y1="175" x2="300" y2="275" stroke="var(--text-main)" stroke-width="2"/>
+                <line x1="300" y1="175" x2="200" y2="175" stroke="var(--text-main)" stroke-width="2"/>
+                <circle cx="300" cy="75" r="10" fill="var(--text-main)"/>
+                <circle cx="400" cy="175" r="10" fill="var(--text-main)"/>
+                <circle cx="300" cy="275" r="10" fill="var(--text-main)"/>
+                <circle cx="200" cy="175" r="10" fill="var(--text-main)"/>
+                <text x="300" y="325" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Distributed Authority Nodes</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Mapping authority across a self-organizing team structure.</em></p>
+
+            <h4>3. Continuous Learning and Adaptability</h4>
+            <p>A commitment to ongoing learning, experimentation, and viewing mistakes as opportunities for improvement is central. Agile leaders model a growth mindset and encourage rapid feedback loops. They prioritize "learning fast" over "avoiding mistakes," which is crucial for innovation in volatile environments.</p>
+            <svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <path d="M200 175 A100 100 0 1 1 400 175" fill="none" stroke="var(--accent)" stroke-width="4"/>
+                <path d="M400 175 A100 100 0 1 1 200 175" fill="none" stroke="var(--accent)" stroke-width="4" stroke-dasharray="10 5"/>
+                <text x="300" y="180" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">LEARN & ADAPT</text>
+                <path d="M390 175 L410 175 L400 185 Z" fill="var(--accent)"/>
+                <text x="300" y="325" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">The Feedback Loop of Continuous Improvement</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: The cyclical nature of agile learning and adaptation.</em></p>
+
+            <h4>4. Customer-Centric Focus</h4>
+            <p>In the agile framework, the customer is the North Star. Every decision, experiment, and output is evaluated against the value it provides to the end-user. Agile leaders break down silos to ensure that the entire organization remains aligned with customer needs, using direct feedback to pivot or persevere.</p>
+            <svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <polygon points="300,50 320,100 380,100 330,140 350,200 300,160 250,200 270,140 220,100 280,100" fill="var(--accent)"/>
+                <circle cx="300" cy="125" r="100" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.3"/>
+                <line x1="300" y1="125" x2="300" y2="300" stroke="var(--text-dim)" stroke-width="2" stroke-dasharray="5 5"/>
+                <text x="300" y="240" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">CUSTOMER VALUE</text>
+                <text x="300" y="325" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Alignment with the Strategic North Star</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Prioritizing customer value as the central guiding star.</em></p>
+
+            <div class="action-box">
+                <h3>Practical Application of Agile Leadership</h3>
+                <p>To transition toward an agile leadership style, consider these actionable steps:</p>
+                <ul>
+                    <li><strong>Foster Psychological Safety:</strong> Ensure team members feel safe to take risks and voice their ideas without fear of negative repercussions.</li>
+                    <li><strong>Implement Short Cycles:</strong> Work in short, iterative cycles (Sprints) with clear goals and regular reviews to enable rapid pivots.</li>
+                    <li><strong>Promote Radical Transparency:</strong> Share information openly across the organization to ensure everyone is aligned and empowered to make informed decisions.</li>
+                    <li><strong>Focus on Outcomes over Outputs:</strong> Measure success by the value created for the customer and the organization, not just the volume of work completed.</li>
+                </ul>
+                <p>By adopting these principles, leaders can create resilient organizations capable of thriving amidst constant change and uncertainty.</p>
+            </div>
+        </div>
+
+        <section class="discussion-section">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">Executive Discussion</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your implementation insights or questions regarding this model.</p>
+            <form class="insight-form"><input type="text" placeholder="Your Name or Role" required><textarea placeholder="Write your insight here..." required></textarea><button type="submit" class="submit-btn">Post Insight</button></form>
+        </section>
+    </div>
+    <footer><p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p><p style="margin-top: 0.5rem; opacity: 0.4;">mybuildwithai.com</p></footer>
+</body>
+</html>

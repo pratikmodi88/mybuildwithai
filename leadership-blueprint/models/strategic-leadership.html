@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Leadership | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        nav.main-nav { padding: 1.5rem 2rem; display: flex; justify-content: center; gap: 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.95); backdrop-filter: blur(10px); z-index: 1000; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
+        .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
+        .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
+        .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        .hero-image-container { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); padding: 2rem; display: flex; justify-content: center; }
+        .hero-image-container svg { width: 100%; height: auto; max-width: 600px; }
+        .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
+        .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
+        .discussion-section { margin-top: 8rem; border-top: 1px solid var(--border); padding-top: 4rem; }
+        .insight-form { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); margin-top: 2rem; }
+        .insight-form textarea, .insight-form input { width: 100%; background: #0b0e14; border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; color: #fff; margin-bottom: 1rem; box-sizing: border-box; }
+        .submit-btn { background: var(--accent); color: #fff; border: none; padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
+        footer { padding: 4rem 1.5rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; background: #080a0f; }
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav.main-nav { gap: 1.5rem; padding: 1rem; } .nav-link { font-size: 0.7rem; } }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">About</a>
+        <a href="../index.html" class="nav-link active">Leadership Blueprint</a>
+        <a href="../../index.html#impact" class="nav-link">Impact</a>
+    </nav>
+    <div class="container">
+        <div class="metadata">Strategy</div>
+        <h1>Strategic Leadership</h1>
+        <div class="published-info">Published: Feb 2026 &bull; 6 min read &bull; Curated by Aurora</div>
+        <div class="hero-image-container">
+            <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="400" fill="var(--card-bg)" rx="12"/>
+                <!-- Central Core -->
+                <circle cx="300" cy="200" r="80" fill="rgba(34, 166, 179, 0.1)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="300" y="195" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">STRATEGIC</text>
+                <text x="300" y="215" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">LEADERSHIP</text>
+                
+                <!-- Five Pillars -->
+                <g transform="translate(300, 200)">
+                    <!-- Vision -->
+                    <circle cx="0" cy="-140" r="35" fill="var(--accent)"/>
+                    <path d="M-10 -140 L10 -140 M0 -150 L0 -130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <text x="0" y="-185" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">VISION</text>
+                    
+                    <!-- Scan -->
+                    <circle cx="133" cy="-43" r="35" fill="var(--accent)"/>
+                    <circle cx="133" cy="-43" r="15" fill="none" stroke="white" stroke-width="2"/>
+                    <line x1="133" y1="-43" x2="148" y2="-28" stroke="white" stroke-width="2"/>
+                    <text x="170" y="-40" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="start">SCAN</text>
+
+                    <!-- Design -->
+                    <circle cx="82" cy="113" r="35" fill="var(--accent)"/>
+                    <rect x="72" y="103" width="20" height="20" fill="none" stroke="white" stroke-width="2"/>
+                    <text x="82" y="165" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">DESIGN</text>
+
+                    <!-- Execute -->
+                    <circle cx="-82" cy="113" r="35" fill="var(--accent)"/>
+                    <path d="M-92 113 L-72 113 M-82 103 L-82 123" stroke="white" stroke-width="2" transform="rotate(45, -82, 113)"/>
+                    <text x="-82" y="165" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">EXECUTE</text>
+
+                    <!-- Adapt -->
+                    <circle cx="-133" cy="-43" r="35" fill="var(--accent)"/>
+                    <path d="M-148 -43 A 15 15 0 1 1 -133 -28" fill="none" stroke="white" stroke-width="2"/>
+                    <polygon points="-133,-28 -138,-33 -133,-38" fill="white"/>
+                    <text x="-170" y="-40" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" font-weight="bold" text-anchor="end">ADAPT</text>
+                </g>
+
+                <!-- Connection Lines -->
+                <circle cx="300" cy="200" r="140" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="5 5"/>
+            </svg>
+        </div>
+        <div class="meat-section">
+            <h2>The 'Why': Navigating Complexity</h2>
+            <p>Strategic Leadership is the practice of navigating complex business environments by integrating visionary thinking, adaptive decision-making, and empowered execution. It is not merely about planning; it is about creating a dynamic alignment between an organization's internal capabilities and the external environment to ensure long-term viability.</p>
+            <p>In an era of rapid disruption, strategic leaders act as both architects and navigators. They balance short-term operational excellence with long-term strategic foresight, ensuring that the organization does not just survive the present but thrives in the future.</p>
+
+            <h3>The Five Pillars of Strategic Leadership:</h3>
+            
+            <h4>1. Visionary Intent</h4>
+            <p>The foundation of strategic leadership is a clear, compelling vision that articulates the organization's long-term aspirations. This intent serves as a North Star, guiding all subsequent decisions and providing a sense of purpose to the entire workforce.</p>
+            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <path d="M100 250 L300 50 L500 250" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="10 5"/>
+                <circle cx="300" cy="50" r="20" fill="var(--accent)"/>
+                <path d="M290 50 L310 50 M300 40 L300 60" stroke="white" stroke-width="3"/>
+                <text x="300" y="280" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Defining the Long-term Summit</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Visionary Intent as a North Star/Summit goal.</em></p>
+
+            <h4>2. Strategic Scanning</h4>
+            <p>Effective leaders continuously scan the internal and external landscapes. This involves a rigorous analysis of market trends, competitive shifts, technological advancements (SWOT/PESTLE), and internal organizational health. Scanning ensures that strategy is grounded in reality, not assumptions.</p>
+            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <rect x="150" y="50" width="300" height="200" fill="none" stroke="var(--border)" stroke-width="1"/>
+                <line x1="300" y1="50" x2="300" y2="250" stroke="var(--border)" stroke-width="1"/>
+                <line x1="150" y1="150" x2="450" y2="150" stroke="var(--border)" stroke-width="1"/>
+                <circle cx="300" cy="150" r="80" fill="rgba(34, 166, 179, 0.05)" stroke="var(--accent)" stroke-width="2"/>
+                <line x1="300" y1="150" x2="360" y2="90" stroke="var(--accent)" stroke-width="3">
+                    <animateTransform attributeName="transform" type="rotate" from="0 300 150" to="360 300 150" dur="4s" repeatCount="indefinite" />
+                </line>
+                <text x="300" y="280" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Environmental Scanning & Analysis</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Scanning as a radar-like analysis of internal and external factors.</em></p>
+
+            <h4>3. Strategy Design (Formulation)</h4>
+            <p>Formulation is the process of synthesizing data into a coherent roadmap. It involves identifying unique competitive advantages, prioritizing high-impact initiatives, and making the difficult trade-offs necessary to focus resources where they can achieve the greatest strategic leverage.</p>
+            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <path d="M100 150 Q200 100, 300 150 T500 150" fill="none" stroke="var(--accent)" stroke-width="3"/>
+                <rect x="280" y="130" width="40" height="40" rx="5" fill="var(--accent)"/>
+                <circle cx="100" cy="150" r="10" fill="var(--text-dim)"/>
+                <circle cx="500" cy="150" r="10" fill="var(--text-main)"/>
+                <text x="300" y="280" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Synthesizing the Strategic Roadmap</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Strategy Design as a synthesized path from current state to future state.</em></p>
+
+            <h4>4. Strategic Execution</h4>
+            <p>Execution is where strategy becomes reality. Strategic leaders ensure that the plan is translated into actionable objectives across all levels. This requires building organizational capability, aligning incentives, and fostering a culture of accountability and high performance.</p>
+            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <g stroke="var(--accent)" stroke-width="3" fill="none">
+                    <circle cx="200" cy="150" r="40"/>
+                    <circle cx="280" cy="150" r="40"/>
+                    <circle cx="240" cy="90" r="40"/>
+                </g>
+                <text x="300" y="280" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Building Organizational Capability & Momentum</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Execution as synchronized organizational 'gears'.</em></p>
+
+            <h4>5. Monitoring & Adaptation</h4>
+            <p>Strategy is not static. Continuous monitoring of Key Performance Indicators (KPIs) and external shifts allows the leader to iterate and adapt. This feedback loop ensures that the organization remains resilient and responsive to new information and emerging threats.</p>
+            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <path d="M300 80 A 70 70 0 1 1 299 80" fill="none" stroke="var(--accent)" stroke-width="4" stroke-dasharray="10 5"/>
+                <polyline points="290,70 300,80 290,90" fill="none" stroke="var(--accent)" stroke-width="4"/>
+                <rect x="250" y="140" width="100" height="20" rx="10" fill="rgba(34, 166, 179, 0.2)"/>
+                <text x="300" y="280" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Continuous Feedback & Iterative Adaptation</text>
+            </svg>
+            <p style="font-size: 0.8em; color: var(--text-dim); text-align: center;"><em>Caption: Monitoring as a continuous loop of learning and refinement.</em></p>
+
+            <div class="action-box">
+                <h3>The Value of Strategic Leadership</h3>
+                <ul>
+                    <li><strong>Competitive Advantage:</strong> Focuses resources on unique strengths that are hard for competitors to replicate.</li>
+                    <li><strong>Agility:</strong> Builds the organizational "muscle" to pivot quickly when market conditions change.</li>
+                    <li><strong>Alignment:</strong> Ensures every team member understands how their work contributes to the high-level vision.</li>
+                    <li><strong>Resilience:</strong> Prepares the organization for long-term sustainability rather than just short-term gains.</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="discussion-section">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">Executive Discussion</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;">Share your implementation insights or questions regarding this model.</p>
+            <form class="insight-form"><input type="text" placeholder="Your Name or Role" required><textarea placeholder="Write your insight here..." required></textarea><button type="submit" class="submit-btn">Post Insight</button></form>
+        </section>
+    </div>
+    <footer><p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p><p style="margin-top: 0.5rem; opacity: 0.4;">mybuildwithai.com</p></footer>
+</body>
+</html>

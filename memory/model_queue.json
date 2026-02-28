@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Tuckman's Stages",
+    "category": "Team Dynamics",
+    "description": "The four stages of group development: Forming, Storming, Norming, and Performing.",
+    "filename": "tuckmans-stages.html"
+  },
+  {
+    "name": "Kotter's 8-Step Change Model",
+    "category": "Change Management",
+    "description": "The definitive process for leading organizational change and making it stick.",
+    "filename": "kotters-change-model.html"
+  },
+  {
+    "name": "Goleman's Leadership Styles",
+    "category": "Emotional Intelligence",
+    "description": "Six distinct leadership styles, each derived from different components of emotional intelligence.",
+    "filename": "goleman-leadership-styles.html"
+  },
+  {
+    "name": "The Golden Circle",
+    "category": "Purpose & Strategy",
+    "description": "Simon Sinek's framework for how great leaders inspire action by starting with 'Why'.",
+    "filename": "the-golden-circle.html"
+  },
+  {
+    "name": "Radical Candor",
+    "category": "Feedback & Communication",
+    "description": "The ability to challenge directly while caring personally.",
+    "filename": "radical-candor.html"
+  },
+  {
+    "name": "The Johari Window",
+    "category": "Self-Awareness",
+    "description": "A technique used to help people better understand their relationship with themselves and others.",
+    "filename": "johari-window.html"
+  },
+  {
+    "name": "Psychological Safety",
+    "category": "Team Performance",
+    "description": "Amy Edmondson's research on the shared belief that the team is safe for interpersonal risk-taking.",
+    "filename": "psychological-safety.html"
+  }
+]

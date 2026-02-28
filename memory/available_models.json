@@ -1,5 +1,14 @@
 [
-    {"name": "SMART Goals", "category": "Goal Setting", "description": "A framework for setting effective and achievable goals: Specific, Measurable, Achievable, Relevant, Time-bound."},
-    {"name": "GROW Model", "category": "Coaching", "description": "A simple yet powerful coaching model used to structure conversations and facilitate problem-solving: Goal, Reality, Options, Will."},
-    {"name": "Five Dysfunctions of a Team", "category": "Team Dynamics", "description": "Patrick Lencioni's model outlining common pitfalls that hinder team effectiveness: Absence of Trust, Fear of Conflict, Lack of Commitment, Avoidance of Accountability, Inattention to Results."}
+    {"name": "Transformational Leadership", "category": "Leadership Styles", "description": "Inspiring and motivating teams to achieve extraordinary results by appealing to higher ideals and values."},
+    {"name": "Strategic Leadership", "category": "Strategy", "description": "Prioritizing long-term objectives and guiding organizations toward sustainable success through foresight."},
+    {"name": "Agile Leadership", "category": "Management", "description": "Emphasizing adaptability, collaboration, and continuous improvement in fast-paced environments."},
+    {"name": "Portfolio Governance", "category": "Governance", "description": "Framework for strategic oversight and control over a collection of projects and programs."},
+    {"name": "OODA Loop", "category": "Decision Making", "description": "Observe, Orient, Decide, Act - a dynamic framework for rapid decision-making cycles."},
+    {"name": "Cynefin Framework", "category": "Decision Making", "description": "A leader's framework for decision making by categorizing problems into clear, complicated, complex, or chaotic."},
+    {"name": "Herzberg's Two-Factor Theory", "category": "Motivation", "description": "Distinguishes between motivators (job satisfaction) and hygiene factors (job dissatisfaction)."},
+    {"name": "Tuckman's Stages of Group Development", "category": "Team Dynamics", "description": "Forming, Storming, Norming, Performing, and Adjourning - the stages of team growth."},
+    {"name": "Maslow's Hierarchy (Business)", "category": "Motivation", "description": "Applying the hierarchy of needs to employee engagement and organizational culture."},
+    {"name": "Leader-Member Exchange (LMX)", "category": "Leadership Styles", "description": "Focuses on the two-way relationship between leaders and individual team members."},
+    {"name": "Path-Goal Theory", "category": "Leadership Styles", "description": "How leaders motivate subordinates to accomplish designated goals by clarifying paths and removing obstacles."},
+    {"name": "Vroom-Yetton Decision Model", "category": "Decision Making", "description": "A situational leadership model to determine the best decision-making approach based on the context."}
 ]

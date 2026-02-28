@@ -133,26 +133,30 @@
         /* Filter Controls */
         .filter-container {
             margin-bottom: 3rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             border-bottom: 1px solid var(--border);
             padding-bottom: 2.5rem;
-            justify-content: flex-start;
         }
         .filter-btn {
             background: rgba(22, 27, 34, 0.5);
             border: 1px solid var(--border);
             color: var(--text-dim);
-            padding: 0.7rem 1.4rem;
+            padding: 0.8rem 0.5rem;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex: 0 1 auto;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 3rem;
         }
         .filter-btn:hover, .filter-btn.active {
             border-color: var(--accent);
@@ -292,7 +296,7 @@
             .model-card h2 { min-height: auto; }
             nav.main-nav { gap: 1.5rem; padding: 1rem; }
             .nav-link { font-size: 0.7rem; }
-            .filter-container { justify-content: center; }
+            .filter-container { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>

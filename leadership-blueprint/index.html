@@ -276,15 +276,16 @@
             transform: translateY(-2px);
         }
 
-        footer {
-            margin-top: 10rem;
-            padding: 5rem 1.5rem;
+                footer {
+            padding: 5rem 0;
             background: #080a0f;
             border-top: 1px solid var(--border);
-            font-size: 0.9rem;
-            color: var(--text-dim);
             text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-top: 8rem;
         }
+        
 
         @media (max-width: 1024px) {
             #model-list { grid-template-columns: repeat(2, 1fr); }
@@ -399,11 +400,13 @@
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.4;">
-            This portfolio is a live demonstration of AI-assisted development, built and maintained using Aurora, my custom AI system.
-        </p>
+        <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
+            <p class="footer-note">
+                This portfolio is a live demonstration of AI-assisted development, built and maintained using Aurora, my custom AI system.
+            </p>
+        </div>
     </footer>
 
     <script>

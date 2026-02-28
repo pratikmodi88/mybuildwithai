@@ -73,7 +73,6 @@
             backdrop-filter: blur(12px);
             z-index: 1001;
         }
-        /* Bridge the gap between nav and dropdown to prevent hover loss */
         .dropdown-menu::before {
             content: "";
             position: absolute;
@@ -104,13 +103,13 @@
         }
 
         .container {
-            max-width: 950px; /* Reduced to match About page centered feel */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 6rem 1.5rem;
         }
         header.content-header {
             text-align: left;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
             border-left: 4px solid var(--accent);
             padding-left: 2rem;
         }
@@ -130,6 +129,34 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
+
+        /* Filter Controls */
+        .filter-container {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(34, 166, 179, 0.05);
+        }
         
         /* THE GRID */
         #model-list {
@@ -138,7 +165,53 @@
             gap: 1.5rem;
             margin-bottom: 8rem;
         }
-        
+        .model-card {
+            background: var(--card-bg);
+            padding: 2.5rem 1.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .model-card.hidden {
+            display: none;
+        }
+        .model-card:hover { 
+            border-color: var(--accent);
+            background: #1c2128;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-8px);
+        }
+        .meta {
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+        .model-card h2 { 
+            font-family: 'Playfair Display', serif;
+            margin: 0 0 1rem 0; 
+            font-size: 1.6rem;
+            color: #fff;
+            line-height: 1.2;
+            min-height: 4.5rem; 
+            display: flex;
+            align-items: flex-start;
+        }
+        .model-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            flex-grow: 1;
+        }
+
         /* Subscribe Section */
         .subscribe-section {
             background: rgba(34, 166, 179, 0.05);
@@ -197,50 +270,6 @@
             transform: translateY(-2px);
         }
 
-        .model-card {
-            background: var(--card-bg);
-            padding: 2.5rem 1.5rem;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            color: inherit;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .model-card:hover { 
-            border-color: var(--accent);
-            background: #1c2128;
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
-            transform: translateY(-8px);
-        }
-        .meta {
-            font-size: 0.7rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: block;
-            letter-spacing: 0.05em;
-        }
-        .model-card h2 { 
-            font-family: 'Playfair Display', serif;
-            margin: 0 0 1rem 0; 
-            font-size: 1.6rem;
-            color: #fff;
-            line-height: 1.2;
-            min-height: 4.5rem; 
-            display: flex;
-            align-items: flex-start;
-        }
-        .model-card p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-            flex-grow: 1;
-        }
-
         footer {
             margin-top: 10rem;
             padding: 5rem 1.5rem;
@@ -251,7 +280,6 @@
             text-align: center;
         }
 
-        /* Responsive Grid */
         @media (max-width: 1024px) {
             #model-list { grid-template-columns: repeat(2, 1fr); }
         }
@@ -262,6 +290,7 @@
             .model-card h2 { min-height: auto; }
             nav.main-nav { gap: 1.5rem; padding: 1rem; }
             .nav-link { font-size: 0.7rem; }
+            .filter-container { justify-content: center; }
         }
     </style>
 </head>
@@ -290,56 +319,67 @@
             </p>
         </header>
 
+        <div class="filter-container" id="filter-btns">
+            <button class="filter-btn active" data-filter="all">All Models</button>
+            <button class="filter-btn" data-filter="Coaching">Coaching</button>
+            <button class="filter-btn" data-filter="Strategy">Strategy</button>
+            <button class="filter-btn" data-filter="Management">Management</button>
+            <button class="filter-btn" data-filter="Team Dynamics">Team Dynamics</button>
+            <button class="filter-btn" data-filter="Leadership Styles">Leadership Styles</button>
+            <button class="filter-btn" data-filter="Emotional Intelligence">EQ</button>
+            <button class="filter-btn" data-filter="Productivity">Productivity</button>
+        </div>
+
         <main id="model-list">
-            <a href="models/grow-model.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/grow-model.html" class="model-card" data-category="Coaching" target="_blank" rel="noopener">
                 <span class="meta">Coaching &bull; 5 Min Read</span>
                 <h2>The GROW Model</h2>
-                <p>A simple yet powerful coaching model used to structure conversations and facilitate problem-solving: Goal, Reality, Options, Will.</p>
+                <p>A simple yet powerful coaching model used to structure conversations and facilitate problem-solving.</p>
             </a>
-            <a href="models/scarf-model.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/scarf-model.html" class="model-card" data-category="Emotional Intelligence" target="_blank" rel="noopener">
                 <span class="meta">Emotional Intelligence &bull; 7 Min Read</span>
                 <h2>The SCARF Model</h2>
                 <p>The neuroscience of leadership: Understanding social threats and rewards.</p>
             </a>
-            <a href="models/servant-leadership.html" class="model-card" target="_blank" rel="noopener">
-                <span class="meta">Ethical Leadership &bull; 5 Min Read</span>
+            <a href="models/servant-leadership.html" class="model-card" data-category="Leadership Styles" target="_blank" rel="noopener">
+                <span class="meta">Leadership Styles &bull; 5 Min Read</span>
                 <h2>Servant Leadership</h2>
                 <p>Leading by putting the needs of the team first and flipping the power pyramid.</p>
             </a>
-            <a href="models/smart-goals.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/smart-goals.html" class="model-card" data-category="Goal Setting" target="_blank" rel="noopener">
                 <span class="meta">Goal Setting &bull; 6 Min Read</span>
                 <h2>SMART Goals</h2>
-                <p>A framework for setting effective and achievable goals: Specific, Measurable, Achievable, Relevant, Time-bound.</p>
+                <p>A framework for setting effective and achievable goals: Specific, Measurable, Relevant.</p>
             </a>
-            <a href="models/eisenhower-matrix.html" class="model-card" target="_blank" rel="noopener">
-                <span class="meta">Personal Productivity &bull; 5 Min Read</span>
+            <a href="models/eisenhower-matrix.html" class="model-card" data-category="Productivity" target="_blank" rel="noopener">
+                <span class="meta">Productivity &bull; 5 Min Read</span>
                 <h2>The Eisenhower Matrix</h2>
                 <p>A strategic framework for distinguishing between value and urgent distractions.</p>
             </a>
-            <a href="models/five-dysfunctions-of-a-team.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/five-dysfunctions-of-a-team.html" class="model-card" data-category="Team Dynamics" target="_blank" rel="noopener">
                 <span class="meta">Team Dynamics &bull; 8 Min Read</span>
                 <h2>Five Dysfunctions of a Team</h2>
-                <p>Patrick Lencioni's model outlining common pitfalls that hinder team effectiveness: Absence of Trust, Fear of Conflict, Lack of Commitment, Avoidance of Accountability, Inattention to Results.</p>
+                <p>Patrick Lencioni's model outlining common pitfalls that hinder team effectiveness.</p>
             </a>
-            <a href="models/situational-leadership.html" class="model-card" target="_blank" rel="noopener">
-                <span class="meta">Management Strategy &bull; 6 Min Read</span>
+            <a href="models/situational-leadership.html" class="model-card" data-category="Management" target="_blank" rel="noopener">
+                <span class="meta">Management &bull; 6 Min Read</span>
                 <h2>Situational Leadership</h2>
                 <p>The definitive model for adaptive management based on performance readiness.</p>
             </a>
-            <a href="models/transformational-leadership.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/transformational-leadership.html" class="model-card" data-category="Leadership Styles" target="_blank" rel="noopener">
                 <span class="meta">Leadership Styles &bull; 6 Min Read</span>
                 <h2>Transformational Leadership</h2>
-                <p>Inspiring and motivating teams to achieve extraordinary results by appealing to higher ideals and values.</p>
+                <p>Inspiring teams to achieve extraordinary results by appealing to higher ideals.</p>
             </a>
-            <a href="models/strategic-leadership.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/strategic-leadership.html" class="model-card" data-category="Strategy" target="_blank" rel="noopener">
                 <span class="meta">Strategy &bull; 6 Min Read</span>
                 <h2>Strategic Leadership</h2>
-                <p>Prioritizing long-term objectives and guiding organizations toward sustainable success through foresight.</p>
+                <p>Prioritizing long-term objectives through foresight and adaptive execution.</p>
             </a>
-            <a href="models/agile-leadership.html" class="model-card" target="_blank" rel="noopener">
+            <a href="models/agile-leadership.html" class="model-card" data-category="Management" target="_blank" rel="noopener">
                 <span class="meta">Management &bull; 6 Min Read</span>
                 <h2>Agile Leadership</h2>
-                <p>Emphasizing adaptability, collaboration, and continuous improvement in fast-paced environments.</p>
+                <p>Emphasizing adaptability and continuous improvement in fast-paced environments.</p>
             </a>
         </main>
 
@@ -351,13 +391,35 @@
                 <button type="submit" class="subscribe-btn">Subscribe</button>
             </form>
         </section>
-
-        <!-- Script removed to go back to standard submission for verification -->
     </div>
 
     <footer>
         <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
         <p style="margin-top: 0.5rem; opacity: 0.4;">mybuildwithai.com</p>
     </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const modelCards = document.querySelectorAll('.model-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                modelCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

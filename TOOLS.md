@@ -16,6 +16,13 @@ Things like:
 ## Examples
 
 ```markdown
+### Portfolio Automation
+
+- Formspree ID: xykdvvon
+- Resend API Key: re_RXffcCVP_E38bhk9oQ52KZdVYAmAjiyhz
+- Subscriber Source: Formspree (Manual Sync Recommended periodically)
+- Notification Recipient (Test): pratik.k.modi@outlook.com
+
 ### Cameras
 
 - living-room → Main area, 180° wide angle

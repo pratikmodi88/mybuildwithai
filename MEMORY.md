@@ -15,6 +15,9 @@
 ## Upcoming Strategy (Revisit on Fresh Start)
 - **Objective 1:** Build "AI Strategic Scenario Planner" tool (Functional AI showcase).
 - **Objective 3:** Build "The Bridge" - Overhaul LinkedIn/Resume to link site as proof of AI orchestration.
+- **Objective 4 (Autonomous Sync):** Connect LinkedIn/Resume to website. 
+  - **Requirement:** Must use a staging/backup page for review.
+  - **Flow:** Watcher detects change -> Builds `preview.html` -> Pratik reviews -> Approval -> Push to Live.
 
 ## Key Metrics (Last Updated: 2026-02-28)
 - **Business Value:** $54M+ Unlocked through revenue recovery and modernization.

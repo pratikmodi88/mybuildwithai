@@ -18,6 +18,9 @@
    - Full rewrite of the "About" narrative to position Pratik as an "AI-Native Leader."
    - Integration of `mybuildwithai.com` as technical proof of GenAI orchestration ($54M impact + 1.5M transactions).
    - Adding "Leadership Blueprint" to the LinkedIn Featured section.
+3. **Idea #4: Autonomous Brand Sync (Safe-Sync)**
+   - Architect a watcher for LinkedIn/Resume updates.
+   - **Crucial Constraint:** Implement a "Staging & Sign-off" workflow. Agent builds `preview.html`, notifies Pratik, and only pushes to production after explicit approval.
 
 ## Files Updated & Synced:
 - `MEMORY.md` (Strategy summary)

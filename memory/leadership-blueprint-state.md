@@ -1,22 +1,28 @@
-# PROJECT: Leadership Blueprint
-**Status:** Paused (2026-02-24)
-**Owner:** Pratik Kumar Modi
-**URL:** https://pratikmodi88.github.io/leadership-blueprint/
+# PROJECT STATE: Portfolio & Automation Overhaul (March 2026)
 
-## Progress Summary
-- Full professional website built (Dark Mode / Executive / HBR Style).
-- Ownership & Branding integrated (Pratik's Logo + Proprietary Notice).
-- 3 Models completed with original SVG diagrams:
-  1. Situational Leadership® II (Ken Blanchard)
-  2. The Eisenhower Matrix
-  3. Servant Leadership (Greenleaf/Sinek)
-- Automation script `update_blueprint.sh` created for 48-hour cycles.
+## Current Status
+- **URL:** `https://mybuildwithai.com`
+- **Automation:** **ACTIVE**. Every Saturday at 09:00 AM IST (Asia/Kolkata), a worker adds the next leadership model. Next run: **Saturday, March 7th**.
+- **Tech Stack:** Static HTML/CSS, Glassmorphism, Unified Navigation, Formspree (Collection), Resend API (Notifications).
 
-## Current Roadblock
-- YouTube video embeds were intermittently failing to load on mobile/laptop due to strict YouTube/Domain security restrictions.
-- Tried multiple fixes: Verified IDs, Referrer Policies, and Video CTAs.
+## Technical Infrastructure locked in:
+- **Navigation:** Unified across all 13 pages (Home, Blueprint, 11 Models) featuring "My Projects" dropdown and restored "Impact" links.
+- **Filtering:** Interactive 2x4 grid category filtering on the Blueprint hub (Coaching, EQ, Leadership Styles, etc.).
+- **Subscriber System:** Handshake verified with Formspree (ID: `xykdvvon`) and Resend (API: `re_RXf...yhz`).
+- **Footer Standard:** "This portfolio is a live demonstration of AI-assisted development, built and maintained using Aurora, my custom AI system."
 
-## Next Steps when resumed:
-1. Finalize a bulletproof video solution (e.g., hosted thumbnails or local video assets).
-2. Resume the 48-hour automation cycle starting with "The SCARF Model".
-3. Move to custom .com domain once requested.
+## Open Strategic Objectives (The "Fresh Start" Queue):
+1. **Idea #1: AI Strategic Scenario Planner**
+   - An interactive tool on the site where users input a challenge and get an AI-generated leadership playbook based on Pratik's models.
+2. **Idea #3: The LinkedIn/Resume Bridge**
+   - Full rewrite of the "About" narrative to position Pratik as an "AI-Native Leader."
+   - Integration of `mybuildwithai.com` as technical proof of GenAI orchestration ($54M impact + 1.5M transactions).
+   - Adding "Leadership Blueprint" to the LinkedIn Featured section.
+
+## Files Updated & Synced:
+- `MEMORY.md` (Strategy summary)
+- `TOOLS.md` (API Keys & Automation IDs)
+- `index.html` (Unified Nav & Dropdown)
+- `leadership-blueprint/index.html` (Filters & Subscribers)
+- `memory/subscribers.json` (Target list for notifications)
+- `memory/available_models.json` (Queue for automation)

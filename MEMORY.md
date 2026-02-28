@@ -5,13 +5,16 @@
 - **Main Design:** "Enterprise AI Leader" (Interactive flip cards, metric-driven copy, Glassmorphism).
 - **AI Collaboration:** Site curated and developed by Pratik Kumar Modi using the Aurora AI system (✨ Aurora).
 
-## Leadership Blueprint Hub
-- **URL:** https://mybuildwithai.com/leadership-blueprint/
-- **Automation Status:** **ACTIVE** (Job ID: `b1450620-265c-4e20-935a-aef851ddc854`)
-- **Schedule:** Every 2 days at 09:00 IST (Asia/Kolkata).
-- **Automation Logic:** Sub-agent selects from `memory/available_models.json`, researches, generates SVGs, builds Glassmorphism HTML using `grow-model.html` as a template, and pushes to GitHub.
-- **Current Models (9):** GROW, SCARF, Servant Leadership, SMART, Eisenhower, Five Dysfunctions, Situational Leadership, Transformational Leadership, Strategic Leadership.
-- **Next Up:** Agile Leadership.
+## Leadership Blueprint Automation (Active)
+- **Status:** Automated via Cron Job (`b1450620-265c-4e20-935a-aef851ddc854`).
+- **Schedule:** Every Saturday at 09:00 IST (Asia/Kolkata). Next run: March 7th.
+- **Process:** Isolated agent selects from `memory/available_models.json`, researches, generates SVGs, builds Glassmorphism HTML (no discussion section), and notifies subscribers via Resend API.
+- **Unified Nav:** Implemented across all pages (Home, Impact, Highlights, "My Projects" dropdown).
+- **Current Count:** 11 Models (Latest: Agile Leadership).
+
+## Upcoming Strategy (Revisit on Fresh Start)
+- **Objective 1:** Build "AI Strategic Scenario Planner" tool (Functional AI showcase).
+- **Objective 3:** Build "The Bridge" - Overhaul LinkedIn/Resume to link site as proof of AI orchestration.
 
 ## Key Metrics (Last Updated: 2026-02-28)
 - **Business Value:** $54M+ Unlocked through revenue recovery and modernization.

@@ -49,6 +49,7 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             transition: 0.3s;
+            font-family: 'Inter', sans-serif;
         }
         .nav-link:hover, .nav-link.active { color: var(--accent); }
 
@@ -67,7 +68,7 @@
         .photo-placeholder {
             width: 100%;
             aspect-ratio: 4/5;
-            background: var(--card-bg);
+            background: #161b22;
             border: 1px solid var(--border);
             border-radius: 4px;
             display: flex;
@@ -82,7 +83,7 @@
             height: 100%;
             object-fit: cover;
             filter: grayscale(100%) contrast(1.1);
-            object-position: 50% -40%;
+            object-position: 50% -10%; /* Adjusted back up */
         }
         .photo-overlay {
             position: absolute;
@@ -106,6 +107,7 @@
             -webkit-text-fill-color: transparent;
         }
         .hero-subtitle {
+            font-family: 'Inter', sans-serif;
             font-size: 1.5rem;
             color: var(--accent);
             font-weight: 500;
@@ -113,6 +115,7 @@
             letter-spacing: 0.05em;
         }
         .hero-lead {
+            font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             color: var(--text-dim);
             max-width: 600px;
@@ -129,11 +132,12 @@
             letter-spacing: 0.1em;
             font-size: 0.85rem;
             transition: 0.3s;
+            font-family: 'Inter', sans-serif;
         }
         .btn-linkedin { background: #0077b5; color: #fff; }
         .btn-email { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 
-        /* Impact Section - Dark Gradient */
+        /* Impact Section */
         .impact { padding: 8rem 0; background: #0d1117; }
         .impact-grid {
             display: grid;
@@ -151,8 +155,8 @@
         }
         .impact-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .impact-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.5rem; }
-        .impact-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-main); }
-        .impact-desc { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
+        .impact-label { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-main); }
+        .impact-desc { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
 
         /* Highlights Section */
         .highlights { padding: 8rem 0; }
@@ -170,14 +174,13 @@
             backdrop-filter: blur(10px);
         }
         .highlight-card h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); }
-        .company-label { font-weight: 700; color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem; display: block; }
+        .company-label { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem; display: block; }
         .highlight-card ul { list-style: none; }
-        .highlight-card ul li { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 0.75rem; padding-left: 1.2rem; position: relative; }
+        .highlight-card ul li { font-family: 'Inter', sans-serif; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 0.75rem; padding-left: 1.2rem; position: relative; }
         .highlight-card ul li::before { content: '→'; color: var(--accent); position: absolute; left: 0; }
 
         /* Section Components */
-        .section-header { margin-bottom: 2rem; }
-        .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
+        .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; font-family: 'Inter', sans-serif; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; }
 
         /* Leadership Philosophy */
@@ -185,18 +188,19 @@
         .philosophy-content { display: flex; gap: 4rem; align-items: center; }
         .philosophy-text { flex: 1; }
         .philosophy-list { flex: 1; display: grid; gap: 1.5rem; }
-        .philosophy-item { background: var(--bg); padding: 1.5rem; border-left: 4px solid var(--accent); }
+        .philosophy-item { font-family: 'Inter', sans-serif; background: var(--bg); padding: 1.5rem; border-left: 4px solid var(--accent); }
 
         /* Value Section */
         .value { padding: 8rem 0; }
         .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
         .value-item { background: var(--glass-bg); padding: 2rem; border-radius: 4px; border: 1px solid var(--border); display: flex; align-items: center; gap: 1.5rem; }
+        .value-item p { font-family: 'Inter', sans-serif; }
         .value-icon { font-size: 1.5rem; color: var(--accent); }
 
         /* Footer */
         footer { padding: 6rem 0 3rem; text-align: center; border-top: 1px solid var(--border); }
-        .footer-note { font-size: 0.8rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 3rem; font-style: italic; }
-        .copyright { font-size: 0.85rem; color: var(--text-dim); }
+        .footer-note { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 3rem; font-style: italic; }
+        .copyright { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-dim); }
 
         @media (max-width: 1024px) {
             .hero { flex-direction: column; text-align: center; }
@@ -307,7 +311,7 @@
                     <h3>Intelligent Evolution</h3>
                     <span class="company-label">Franklin Templeton</span>
                     <ul>
-                        <li>Designed enterprise RPA frameworks</li>
+                        <li>Design enterprise RPA frameworks</li>
                         <li>Integrated legacy with modern data infrastructure</li>
                         <li>Established scalable automation governance</li>
                     </ul>
@@ -323,7 +327,7 @@
                     <span class="section-label">Principles</span>
                     <h2 class="section-title">Leadership Philosophy</h2>
                 </div>
-                <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 2rem;">
+                <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 2rem; font-family: 'Inter', sans-serif;">
                     Enterprise transformation fails when technology runs ahead of economics. 
                     My approach is anchored in measurable value, architectural modernization, and governance-driven AI deployment.
                 </p>

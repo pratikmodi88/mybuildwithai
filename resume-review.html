@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview | Pratik Kumar Modi - Enterprise AI Leader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --glass-bg: rgba(22, 27, 34, 0.7);
+            --text-main: #e6edf3;
+            --text-dim: #8b949e;
+            --accent: #22a6b3;
+            --border: rgba(48, 54, 61, 0.6);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav.main-nav {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+        .nav-content { display: flex; justify-content: center; gap: 3rem; }
+        .nav-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            min-height: 80vh;
+            align-items: center;
+            gap: 4rem;
+            padding: 6rem 0;
+        }
+        .hero-image-area {
+            flex: 1;
+            position: relative;
+        }
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            object-position: 50% -40%;
+        }
+        .photo-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: -1rem;
+            background: var(--accent);
+            padding: 1rem 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            transform: rotate(-2deg);
+        }
+
+        .hero-text { flex: 1.2; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+        .hero-lead {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-btns { display: flex; gap: 1.5rem; }
+        .btn-hero {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .btn-linkedin { background: #0077b5; color: #fff; }
+        .btn-email { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+        /* Impact Section - Dark Gradient */
+        .impact { padding: 8rem 0; background: #0d1117; }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .impact-card {
+            background: var(--glass-bg);
+            padding: 2.5rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .impact-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .impact-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.5rem; }
+        .impact-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-main); }
+        .impact-desc { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
+
+        /* Highlights Section */
+        .highlights { padding: 8rem 0; }
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .highlight-card {
+            background: var(--glass-bg);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .highlight-card h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); }
+        .company-label { font-weight: 700; color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem; display: block; }
+        .highlight-card ul { list-style: none; }
+        .highlight-card ul li { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 0.75rem; padding-left: 1.2rem; position: relative; }
+        .highlight-card ul li::before { content: '→'; color: var(--accent); position: absolute; left: 0; }
+
+        /* Section Components */
+        .section-header { margin-bottom: 2rem; }
+        .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; }
+
+        /* Leadership Philosophy */
+        .philosophy { padding: 8rem 0; background: #0d1117; }
+        .philosophy-content { display: flex; gap: 4rem; align-items: center; }
+        .philosophy-text { flex: 1; }
+        .philosophy-list { flex: 1; display: grid; gap: 1.5rem; }
+        .philosophy-item { background: var(--bg); padding: 1.5rem; border-left: 4px solid var(--accent); }
+
+        /* Value Section */
+        .value { padding: 8rem 0; }
+        .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+        .value-item { background: var(--glass-bg); padding: 2rem; border-radius: 4px; border: 1px solid var(--border); display: flex; align-items: center; gap: 1.5rem; }
+        .value-icon { font-size: 1.5rem; color: var(--accent); }
+
+        /* Footer */
+        footer { padding: 6rem 0 3rem; text-align: center; border-top: 1px solid var(--border); }
+        .footer-note { font-size: 0.8rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 3rem; font-style: italic; }
+        .copyright { font-size: 0.85rem; color: var(--text-dim); }
+
+        @media (max-width: 1024px) {
+            .hero { flex-direction: column; text-align: center; }
+            .highlights-grid, .philosophy-content { grid-template-columns: 1fr; flex-direction: column; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="container nav-content">
+            <a href="/" class="nav-link">Home</a>
+            <a href="#impact" class="nav-link">Impact</a>
+            <a href="#highlights" class="nav-link">Highlights</a>
+            <a href="leadership-blueprint/" class="nav-link">Blueprint</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-image-area">
+                <div class="photo-placeholder">
+                    <img src="images/pratik-kumar-modi-profile.jpg" alt="Pratik Kumar Modi Portrait">
+                </div>
+                <div class="photo-overlay">AI Transformation Leader</div>
+            </div>
+            <div class="hero-text">
+                <h1>Enterprise Product & AI Transformation Leader.</h1>
+                <p class="hero-subtitle">Pratik Kumar Modi</p>
+                <p class="hero-lead">
+                    I operate at the intersection of Product Strategy, Data Platforms, and Generative AI — 
+                    transforming complex ecosystems into scalable, high-performance systems aligned to business economics.
+                </p>
+                <div class="hero-btns">
+                    <a href="https://www.linkedin.com/in/pratikkumarmodi/" target="_blank" class="btn-hero btn-linkedin">LinkedIn</a>
+                    <a href="mailto:pratik.k.modi@outlook.com" class="btn-hero btn-email">Email Me</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Performance Metrics</span>
+                <h2 class="section-title">Impact at Scale</h2>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-number">$54M+</span>
+                    <span class="impact-label">Business Value</span>
+                    <p class="impact-desc">Revenue recovery and loss prevention through intelligent platforms.</p>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">1.5M+</span>
+                    <span class="impact-label">Monthly Transactions</span>
+                    <p class="impact-desc">AI-enabled ecosystems processing enterprise-scale workloads.</p>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">30+</span>
+                    <span class="impact-label">FTE Eliminated</span>
+                    <p class="impact-desc">Re-engineered core workflows through AI-driven orchestration.</p>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">100+</span>
+                    <span class="impact-label">Global Members</span>
+                    <p class="impact-desc">Scaled high-performing global product and engineering teams.</p>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">50%</span>
+                    <span class="impact-label">Processing Time</span>
+                    <p class="impact-desc">Accelerated delivery cycles and operational agility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlights" id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Case Studies</span>
+                <h2 class="section-title">Transformation Highlights</h2>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>AI-Native Ecosystems</h3>
+                    <span class="company-label">Deloitte Consulting</span>
+                    <ul>
+                        <li>Authored strategic roadmap for legacy-to-AI migration</li>
+                        <li>Integrated LLM and RAG-based frameworks</li>
+                        <li>Enabled 1.5M+ monthly auto-processed claims</li>
+                        <li>Embedded real-time governance visibility</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <h3>$54M Automation Platform</h3>
+                    <span class="company-label">Carelon Global Solutions</span>
+                    <ul>
+                        <li>$30M revenue recovery / $24M loss prevention</li>
+                        <li>Launched executive-grade analytics platform</li>
+                        <li>Standardized cross-functional workflows</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <h3>Intelligent Evolution</h3>
+                    <span class="company-label">Franklin Templeton</span>
+                    <ul>
+                        <li>Designed enterprise RPA frameworks</li>
+                        <li>Integrated legacy with modern data infrastructure</li>
+                        <li>Established scalable automation governance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container philosophy-content">
+            <div class="philosophy-text">
+                <div class="section-header">
+                    <span class="section-label">Principles</span>
+                    <h2 class="section-title">Leadership Philosophy</h2>
+                </div>
+                <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 2rem;">
+                    Enterprise transformation fails when technology runs ahead of economics. 
+                    My approach is anchored in measurable value, architectural modernization, and governance-driven AI deployment.
+                </p>
+            </div>
+            <div class="philosophy-list">
+                <div class="philosophy-item">Anchor every roadmap to financial outcomes</div>
+                <div class="philosophy-item">Modernize architecture before layering intelligence</div>
+                <div class="philosophy-item">Embed governance alongside innovation</div>
+                <div class="philosophy-item">Operationalize AI — not experiment with it</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Expertise</span>
+                <h2 class="section-title">High-Value Charters</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <span class="value-icon">◈</span>
+                    <p>Enterprise product portfolio ownership</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">◈</span>
+                    <p>AI-led modernization charters</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">◈</span>
+                    <p>Digital transformation mandates</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">◈</span>
+                    <p>P&L-aligned platform ecosystems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <p class="footer-note">
+            "This portfolio and its Leadership Blueprint content are dynamically curated with the assistance of Aurora, my custom AI system."
+        </p>
+        <p class="copyright">
+            &copy; 2026 Pratik Kumar Modi. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

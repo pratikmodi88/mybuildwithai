@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation Highlights | Pratik Kumar Modi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent: #22a6b3;
+            --text: #e0e6ed;
+            --text-dim: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Header */
+        header { padding: 6rem 0 4rem; text-align: center; }
+        .label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .subtitle { color: var(--text-dim); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .cs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .cs-sidebar h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+        .cs-sidebar .company { color: var(--text-dim); font-weight: 600; margin-bottom: 2rem; display: block; }
+        
+        .pill-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .pill { background: rgba(34, 166, 179, 0.1); border: 1px solid rgba(34, 166, 179, 0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--accent); }
+
+        .cs-content h4 { font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .cs-content p { margin-bottom: 1.5rem; color: var(--text-dim); font-size: 1.05rem; }
+        .cs-content ul { list-style: none; }
+        .cs-content li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; color: var(--text-dim); }
+        .cs-content li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Footer */
+        footer { padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .cs-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .case-study { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="/" class="logo">✨ Aurora</a>
+        <div class="nav-links">
+            <a href="/">About Pratik</a>
+            <a href="/leadership-blueprint/">Leadership Blueprint</a>
+        </div>
+    </nav>
+
+    <header class="container">
+        <span class="label">Strategic Modernization</span>
+        <h1>Transformation Highlights</h1>
+        <p class="subtitle">Bridging the gap between complex technical roadmaps and measurable business value through GenAI and Intelligent Automation.</p>
+    </header>
+
+    <main class="container">
+        <!-- Case Study 1 -->
+        <section class="case-study">
+            <div class="cs-grid">
+                <div class="cs-sidebar">
+                    <h3>AI-Native Ecosystems</h3>
+                    <span class="company">Engineering Manager | Deloitte</span>
+                    <div class="pill-group">
+                        <span class="pill">GenAI Strategy</span>
+                        <span class="pill">LLM / RAG Frameworks</span>
+                        <span class="pill">Legacy Migration</span>
+                    </div>
+                </div>
+                <div class="cs-content">
+                    <h4>The Vision</h4>
+                    <p>Directing the strategic evolution of legacy enterprise architectures into intelligent, next-generation solutions. The focus is on moving beyond static automation to systems that learn and adapt.</p>
+                    <h4>Key Outcomes</h4>
+                    <ul>
+                        <li><strong>Orchestrated the Roadmap:</strong> Authored the vision for migrating high-volume legacy systems into GenAI-powered ecosystems.</li>
+                        <li><strong>Scale & Efficiency:</strong> Enabled the auto-processing of ~1.5 million monthly transactions by integrating real-time auditing and LLM frameworks.</li>
+                        <li><strong>Intelligent Governance:</strong> Redesigned core business processes with RAG concepts to ensure data-driven decision-making at every leadership level.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study 2 -->
+        <section class="case-study">
+            <div class="cs-grid">
+                <div class="cs-sidebar">
+                    <h3>Strategic Value Creation</h3>
+                    <span class="company">Asst. Delivery Manager | Carelon</span>
+                    <div class="pill-group">
+                        <span class="pill">Financial Acumen</span>
+                        <span class="pill">Enterprise Analytics</span>
+                        <span class="pill">Product Lifecycle</span>
+                    </div>
+                </div>
+                <div class="cs-content">
+                    <h4>The Vision</h4>
+                    <p>Leveraging deep data storytelling and financial acumen to transform operational data into a high-impact revenue recovery engine.</p>
+                    <h4>Key Outcomes</h4>
+                    <ul>
+                        <li><strong>$54M+ Unlocked:</strong> Led the launch of a flagship analytics platform that delivered $30M in revenue recovery and $24M in loss prevention.</li>
+                        <li><strong>Product Leadership:</strong> Managed the full lifecycle of a massive digital portfolio, translating executive requirements into high-impact digital roadmaps.</li>
+                        <li><strong>Cross-Functional Agility:</strong> Streamlined procurement and delivery workflows, reducing solution turnaround times by 50%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study 3 -->
+        <section class="case-study">
+            <div class="cs-grid">
+                <div class="cs-sidebar">
+                    <h3>Operational Modernization</h3>
+                    <span class="company">Global Portfolio Leadership</span>
+                    <div class="pill-group">
+                        <span class="pill">Talent Development</span>
+                        <span class="pill">Workflow Re-engineering</span>
+                        <span class="pill">Low-Code Strategy</span>
+                    </div>
+                </div>
+                <div class="cs-content">
+                    <h4>The Vision</h4>
+                    <p>Eliminating operational overhead by re-engineering core workflows through intelligent automation and scalable Low-Code/No-Code frameworks.</p>
+                    <h4>Key Outcomes</h4>
+                    <ul>
+                        <li><strong>Workforce Optimization:</strong> Engineered solutions that eliminated manual effort equivalent to ~30 FTEs, redirecting focus to high-value strategic tasks.</li>
+                        <li><strong>Accelerated Prototyping:</strong> Leveraged AI-assisted principles to reduce time-to-market for high-priority technology initiatives.</li>
+                        <li><strong>Leadership at Scale:</strong> Built and led 100+ member global engineering organizations, ensuring tight alignment between technology spend and business P&L.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pratik Kumar Modi. ✨ Aurora Status: Autonomous Sync Active.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

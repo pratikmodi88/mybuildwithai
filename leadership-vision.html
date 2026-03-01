@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Vision | Pratik Kumar Modi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent: #22a6b3;
+            --text: #e0e6ed;
+            --text-dim: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        header { padding: 8rem 0 4rem; text-align: left; }
+        .label { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 2rem; line-height: 1.1; }
+        .intro { font-size: 1.4rem; color: var(--text); font-weight: 300; margin-bottom: 3rem; border-left: 2px solid var(--accent); padding-left: 2rem; }
+
+        .vision-section { margin-bottom: 6rem; }
+        .vision-section h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .vision-section p { font-size: 1.15rem; color: var(--text-dim); margin-bottom: 2rem; }
+
+        .quote-box {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            position: relative;
+        }
+        .quote-box p { font-style: italic; font-size: 1.3rem; color: var(--text); margin-bottom: 0; }
+        .quote-box::before { content: "“"; font-family: 'Playfair Display'; font-size: 8rem; color: rgba(34, 166, 179, 0.1); position: absolute; top: -2rem; left: 1rem; }
+
+        footer { padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .intro { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="/" class="logo">✨ Aurora</a>
+        <div class="nav-links">
+            <a href="/">About Pratik</a>
+            <a href="/leadership-blueprint/">Leadership Blueprint</a>
+        </div>
+    </nav>
+
+    <header class="container">
+        <span class="label">The Philosophy</span>
+        <h1>Leading Through Complexity</h1>
+        <p class="intro">In an era of rapid AI adoption, the most critical leadership skill is not technical expertise—it is the ability to bridge the gap between complex roadmaps and clear business value.</p>
+    </header>
+
+    <main class="container">
+        <section class="vision-section">
+            <h2>Simplifying the Complex</h2>
+            <p>True digital transformation fails when it gets lost in technical jargon. My approach centers on finding the "story behind the numbers." Whether it's migrating a legacy ecosystem or deploying a new GenAI framework, the goal is always the same: make it simpler for the business to make confident, data-driven decisions.</p>
+        </section>
+
+        <div class="quote-box">
+            <p>“Driving business agility is not about adding tools; it’s about removing the friction between technology and intent.”</p>
+        </div>
+
+        <section class="vision-section">
+            <h2>Scaling High-Performance Cultures</h2>
+            <p>Technology transitions are human transitions. Over the past 16 years, I have built and led global organizations of 100+ engineers. My philosophy is rooted in building high-performing cultures that thrive on accountability, mentorship, and a shared vision of excellence. A leader’s job is to clear the path so their teams can do their best work.</p>
+        </section>
+
+        <section class="vision-section">
+            <h2>Responsible AI Orchestration</h2>
+            <p>AI is a force multiplier, not a replacement for human judgment. My strategy for GenAI focuses on intelligent automation that empowers the workforce. By re-engineering core workflows to eliminate manual effort (like the ~30 FTE effort we optimized), we allow talent to focus on high-value strategic growth rather than repetitive processing.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pratik Kumar Modi. ✨ Aurora Status: Autonomous Sync Active.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Transformation Journey | Pratik Kumar Modi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent: #22a6b3;
+            --text: #e0e6ed;
+            --text-dim: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        header { padding: 6rem 0 4rem; text-align: center; }
+        .label { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .subtitle { color: var(--text-dim); font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+        /* Journey Image Section */
+        .journey-visual {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(15px);
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .journey-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            filter: drop-shadow(0 0 20px rgba(34, 166, 179, 0.2));
+        }
+
+        /* Narrative Grid */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .era-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .era-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .era-date { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+        .era-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .era-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
+
+        .cta-section {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(34, 166, 179, 0.05));
+            border-radius: 40px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 2rem;
+        }
+        .cta-btn:hover { background: #1b8a94; transform: scale(1.05); }
+
+        footer { padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .journey-visual { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="/" class="logo">✨ Aurora</a>
+        <div class="nav-links">
+            <a href="/">About Pratik</a>
+            <a href="/leadership-blueprint/">Leadership Blueprint</a>
+        </div>
+    </nav>
+
+    <header class="container">
+        <span class="label">16 Years of Evolution</span>
+        <h1>The Transformation Journey</h1>
+        <p class="subtitle">From the spark of automation to directing AI-native enterprise ecosystems. A strategic timeline of driving business agility at scale.</p>
+    </header>
+
+    <main class="container">
+        <!-- The Visual You Provided -->
+        <section class="journey-visual">
+            <img src="/images/career-mapping.jpg" alt="Pratik Kumar Modi Career Mapping Timeline">
+        </section>
+
+        <div class="narrative-grid">
+            <div class="era-card">
+                <span class="era-date">2009 — 2015</span>
+                <h3>The Data Foundation</h3>
+                <p>Mastering the fundamental mechanics of enterprise reporting. Using VBA, SQL, and SSRS not just for data, but to find the narrative that drives leadership confidence.</p>
+            </div>
+            <div class="era-card">
+                <span class="era-date">2015 — 2019</span>
+                <h3>The RPA Revolution</h3>
+                <p>Scaling efficiency from single tasks to entire business processes. Leading the shift toward Enterprise RPA and process optimization that redefined cost-to-serve.</p>
+            </div>
+            <div class="era-card">
+                <span class="era-date">2019 — 2025</span>
+                <h3>Strategic Transformation</h3>
+                <p>Directing global teams through complex legacy migrations. Orchestrating the pivot to low-code platforms and platform leadership that unlocked $50M+ in business value.</p>
+            </div>
+            <div class="era-card">
+                <span class="era-date">2025 & Beyond</span>
+                <h3>The Next Frontier</h3>
+                <p>Navigating the transition to AI-native enterprises. Leveraging GenAI and RAG frameworks as strategic levers to create adaptive, intelligent, and human-centered organizations.</p>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2>Ready for the Next Chapter?</h2>
+            <p>I am currently looking for leadership roles where I can bridge the gap between AI strategy and tangible business transformation.</p>
+            <a href="mailto:pratik.k.modi@outlook.com" class="cta-btn">Get in Touch</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pratik Kumar Modi. ✨ Aurora Status: Autonomous Sync Active.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

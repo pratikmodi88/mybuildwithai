@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Impact Gallery | Case Study: Intercom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --glass-bg: rgba(22, 27, 34, 0.7);
+            --text-main: #e6edf3;
+            --text-dim: #8b949e;
+            --accent: #22a6b3;
+            --border: rgba(48, 54, 61, 0.6);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+
+        nav.simple-nav {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .case-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+        .case-intro { color: var(--text-dim); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .step-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.5;
+            line-height: 1;
+        }
+        .step-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        .step-content p { color: var(--text-dim); font-size: 1.05rem; }
+
+        .arch-reveal {
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+            background: rgba(22, 27, 34, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .arch-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+        .flow-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .flow-node {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        .flow-node span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .flow-arrow {
+            flex: 0.5;
+            height: 2px;
+            background: repeating-linear-gradient(to right, var(--accent) 0, var(--accent) 10px, transparent 10px, transparent 20px);
+            position: relative;
+            animation: flowDash 2s linear infinite;
+        }
+        @keyframes flowDash {
+            from { background-position: 0 0; }
+            to { background-position: 40px 0; }
+        }
+
+        .comparison-area {
+            margin-top: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .comp-card {
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .comp-card.legacy { background: rgba(255, 255, 255, 0.03); opacity: 0.7; }
+        .comp-card.ai-driven { background: rgba(34, 166, 179, 0.05); border-color: var(--accent); }
+        .comp-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .legacy .comp-label { color: var(--text-dim); }
+        .ai-driven .comp-label { color: var(--accent); }
+        .comp-metric {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .comp-list { list-style: none; }
+        .comp-list li {
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dim);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .comp-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .impact-highlight {
+            background: linear-gradient(135deg, rgba(34, 166, 179, 0.2), transparent);
+            border: 1px solid var(--accent);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .impact-stat {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .impact-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-main);
+        }
+
+        .pratiks-take {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+        .take-box {
+            background: #161b22;
+            padding: 2.5rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+        }
+        .take-header {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .take-text { font-size: 1.1rem; color: var(--text-main); font-style: italic; }
+
+        .cta-area { text-align: center; margin-top: 6rem; }
+        .btn-source {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+        .btn-source:hover { background: var(--accent); color: white; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .step-card { flex-direction: column; gap: 1rem; }
+            .flow-container { flex-direction: column; gap: 2rem; }
+            .flow-arrow { width: 2px; height: 40px; background: repeating-linear-gradient(to bottom, var(--accent) 0, var(--accent) 10px, transparent 10px, transparent 20px); }
+            .comparison-area { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="simple-nav">
+        <a href="../case-studies/" class="back-link">← Back to Impact Gallery</a>
+    </nav>
+
+    <div class="container">
+        <header class="case-header">
+            <span class="section-label">AI Intelligence Feed</span>
+            <h1>The Autonomous Support Frontier</h1>
+            <p class="case-intro">How Intercom’s Fin AI handles 40 million+ conversations with a 67% resolution rate—turning support from a cost center to a profit engine.</p>
+        </header>
+
+        <div class="narrative-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>The Pain: Scaling Human Support</h3>
+                    <p>High-growth SaaS companies face a linear scaling problem: more customers means more support tickets. Hiring humans to keep up with thousands of simple questions is slow, expensive, and limits growth.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>The Spark: Fin AI Agent</h3>
+                    <p>Intercom built Fin, an autonomous AI agent using a multi-model architecture. It doesn't just "chat"; it resolves. It retrieves knowledge from across a company’s help center and policies to fix issues instantly.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>The Win: 67% Autonomy</h3>
+                    <p>Fin now resolves over 40 million conversations with a massive 67% resolution rate. For companies, this means two-thirds of their support volume is handled automatically without a human ever touching a ticket.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="arch-reveal">
+            <span class="section-label">The How: Multi-Model Orchestration</span>
+            <h2 class="arch-title">3-Layer AI Architecture</h2>
+            <div class="flow-container">
+                <div class="flow-node">
+                    <span>App Layer</span>
+                    Knowledge & Policy Feed
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                    <span>AI Layer</span>
+                    RAG & Guardrail Processing
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                    <span>Model Layer</span>
+                    LLM Ensemble (GPT-4+)
+                </div>
+            </div>
+            <p style="margin-top: 3rem; color: var(--text-dim); font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Intercom’s architecture is modular, allowing it to swap models and rerank potential answers based on context—ensuring high resolution while <strong>minimizing hallucinations</strong>.
+            </p>
+        </section>
+
+        <section class="comparison-area">
+            <div class="comp-card legacy">
+                <span class="comp-label">Traditional Bot</span>
+                <span class="comp-metric">~30%</span>
+                <ul class="comp-list">
+                    <li>Basic keyword matching</li>
+                    <li>Frustrating menu-loops</li>
+                    <li>Slow human escalation</li>
+                    <li>High hallucination risk</li>
+                </ul>
+            </div>
+
+            <div class="comp-card ai-driven">
+                <span class="comp-label">Intercom Fin AI</span>
+                <span class="comp-metric">67%+</span>
+                <ul class="comp-list">
+                    <li>Conversational RAG retrieval</li>
+                    <li>Autonomous issue resolution</li>
+                    <li>Context-aware escalations</li>
+                    <li>Pay-per-resolution model</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="impact-highlight">
+            <span class="impact-stat">40 Million+</span>
+            <span class="impact-label">Conversations Resolved Automatically</span>
+        </div>
+
+        <div class="pratiks-take">
+            <div class="take-box">
+                <span class="take-header">✨ Pratik's Strategic Take</span>
+                <p class="take-text">"Intercom solved the biggest fear in enterprise AI: **Trust**. By implementing a multi-layer guardrail system, they proved that AI can be autonomous without being risky. Their 'Pay-per-Resolution' model is the ultimate business win—you only pay when the AI actually delivers value."</p>
+            </div>
+        </div>
+
+        <div class="cta-area">
+            <a href="https://openai.com/customer-stories/intercom" target="_blank" class="btn-source">Read Original Case Study</a>
+        </div>
+    </div>
+
+</body>
+</html>

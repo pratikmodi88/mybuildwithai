@@ -142,9 +142,110 @@
         }
         .btn-source:hover { background: var(--accent); color: white; }
 
+        /* Architecture Reveal Styles */
+        .arch-reveal {
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+            background: rgba(22, 27, 34, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .arch-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+        .flow-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .flow-node {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        .flow-node span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .flow-arrow {
+            flex: 0.5;
+            height: 2px;
+            background: repeating-linear-gradient(to right, var(--accent) 0, var(--accent) 10px, transparent 10px, transparent 20px);
+            position: relative;
+            animation: flowDash 2s linear infinite;
+        }
+        @keyframes flowDash {
+            from { background-position: 0 0; }
+            to { background-position: 40px 0; }
+        }
+
+        /* Comparison Section */
+        .comparison-area {
+            margin-top: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .comp-card {
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .comp-card.legacy { background: rgba(255, 255, 255, 0.03); opacity: 0.7; }
+        .comp-card.ai-driven { background: rgba(34, 166, 179, 0.05); border-color: var(--accent); }
+        .comp-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .legacy .comp-label { color: var(--text-dim); }
+        .ai-driven .comp-label { color: var(--accent); }
+        .comp-metric {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .comp-list { list-style: none; }
+        .comp-list li {
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dim);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .comp-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .step-card { flex-direction: column; gap: 1rem; }
+            .flow-container { flex-direction: column; gap: 2rem; }
+            .flow-arrow { width: 2px; height: 40px; background: repeating-linear-gradient(to bottom, var(--accent) 0, var(--accent) 10px, transparent 10px, transparent 20px); }
+            .comparison-area { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -189,6 +290,56 @@
                 </div>
             </div>
         </div>
+
+        <section class="arch-reveal">
+            <span class="section-label">The How: Engineering the Magic</span>
+            <h2 class="arch-title">AI Orchestration Workflow</h2>
+            <div class="flow-container">
+                <div class="flow-node">
+                    <span>Input</span>
+                    User Query<br>(Complex Issues)
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                    <span>Core Orchestrator</span>
+                    AI Knowledge Agent<br>(RAG-Enabled)
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                    <span>Output</span>
+                    Instant, Data-Backed Resolution
+                </div>
+            </div>
+            <p style="margin-top: 3rem; color: var(--text-dim); font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                By integrating <strong>Retrieval-Augmented Generation (RAG)</strong>, the system doesn't just "guess"—it retrieves verified enterprise data to provide contextually accurate responses in real-time.
+            </p>
+        </section>
+
+        <section class="comparison-area">
+            <!-- Legacy Way -->
+            <div class="comp-card legacy">
+                <span class="comp-label">Legacy Model</span>
+                <span class="comp-metric">11 mins</span>
+                <ul class="comp-list">
+                    <li>High manual handling overhead</li>
+                    <li>Siloed data access for agents</li>
+                    <li>Limited 24/7 scalability</li>
+                    <li>Inconsistent resolution quality</li>
+                </ul>
+            </div>
+
+            <!-- AI-First Way -->
+            <div class="comp-card ai-driven">
+                <span class="comp-label">AI-First Ecosystem</span>
+                <span class="comp-metric">2 mins</span>
+                <ul class="comp-list">
+                    <li>700+ FTE workload automated</li>
+                    <li>Global scale with 24/7 uptime</li>
+                    <li>Self-learning resolution loops</li>
+                    <li>Unified enterprise knowledge access</li>
+                </ul>
+            </div>
+        </section>
 
         <div class="impact-highlight">
             <span class="impact-stat">$40 Million</span>

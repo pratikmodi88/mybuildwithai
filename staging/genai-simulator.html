@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Strategy Simulator | Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --glass-bg: rgba(22, 27, 34, 0.7);
+            --text-main: #e6edf3;
+            --text-dim: #8b949e;
+            --accent: #22a6b3;
+            --border: rgba(48, 54, 61, 0.6);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+
+        .header { text-align: center; margin-bottom: 4rem; }
+        .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
+        .subtitle { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Simulator Layout */
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        /* Input Controls */
+        .control-panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .form-group { margin-bottom: 2rem; }
+        label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.8rem; }
+        
+        select, input[type="range"] {
+            width: 100%;
+            background: rgba(11, 14, 20, 0.5);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-simulate {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-simulate:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Output Display */
+        .result-panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+        }
+        
+        .placeholder-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .result-content { display: none; }
+        .result-header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .rec-label { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+        .rec-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 0.5rem; }
+
+        .metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+        .metric-card { background: rgba(34, 166, 179, 0.05); padding: 1.5rem; border: 1px solid rgba(34, 166, 179, 0.2); border-radius: 8px; }
+        .metric-val { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); }
+        .metric-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); }
+
+        .roadmap-viz {
+            background: rgba(11, 14, 20, 0.4);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+            margin-top: auto;
+        }
+        .viz-step { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .viz-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+        .viz-text { font-size: 0.9rem; color: var(--text-dim); }
+
+        @media (max-width: 768px) {
+            .simulator-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <span class="section-label">Interactive Strategy Tool</span>
+            <h1>GenAI Strategy Simulator.</h1>
+            <p class="subtitle">Input your business parameters to see the recommended architecture, ROI projection, and strategic roadmap.</p>
+        </header>
+
+        <div class="simulator-grid">
+            <!-- LEFT: Inputs -->
+            <div class="control-panel">
+                <div class="form-group">
+                    <label>Business Problem</label>
+                    <select id="problem">
+                        <option value="cs">Customer Support Automation</option>
+                        <option value="doc">Intelligent Document Processing</option>
+                        <option value="know">Enterprise Knowledge Search</option>
+                        <option value="sales">Sales & Outreach Personalization</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Data Complexity</label>
+                    <select id="complexity">
+                        <option value="low">Structured Data (DBs/Spreadsheets)</option>
+                        <option value="med">Mixed (PDFs, Emails, Docs)</option>
+                        <option value="high">Deep Legacy / Unstructured</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Monthly Volume (Trans.)</label>
+                    <input type="range" id="volume" min="1000" max="100000" step="5000" value="10000">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-dim); margin-top: 0.5rem;">
+                        <span>1k</span>
+                        <span id="vol-display">10,000</span>
+                        <span>100k</span>
+                    </div>
+                </div>
+
+                <button class="btn-simulate" onclick="runSimulation()">Run Strategy Simulation</button>
+            </div>
+
+            <!-- RIGHT: Results -->
+            <div class="result-panel" id="result-panel">
+                <div class="placeholder-text" id="placeholder">
+                    Select your parameters and click "Run Simulation" to generate your Strategic Blueprint.
+                </div>
+
+                <div class="result-content" id="result-content">
+                    <div class="result-header">
+                        <span class="rec-label">Recommended Strategy</span>
+                        <h2 class="rec-title" id="rec-title">Hybrid RAG Architecture</h2>
+                    </div>
+
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <span class="metric-val" id="roi-val">$450k</span>
+                            <span class="metric-label">Est. Annual Value</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-val" id="time-val">12 Weeks</span>
+                            <span class="metric-label">Speed to Market</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <label>Why this approach?</label>
+                        <p id="rec-desc" style="color: var(--text-dim); font-size: 0.95rem;">Based on your volume and complexity, a custom RAG (Retrieval-Augmented Generation) solution is more cost-effective than fine-tuning, providing 99% accuracy with real-time data grounding.</p>
+                    </div>
+
+                    <div class="roadmap-viz">
+                        <label style="margin-bottom: 1rem;">Execution Roadmap</label>
+                        <div class="viz-step">
+                            <div class="viz-dot"></div>
+                            <div class="viz-text">Phase 1: Data Orchestration & Vectorization</div>
+                        </div>
+                        <div class="viz-step">
+                            <div class="viz-dot" style="opacity: 0.6;"></div>
+                            <div class="viz-text">Phase 2: RAG Pipeline & Guardrail Setup</div>
+                        </div>
+                        <div class="viz-step">
+                            <div class="viz-dot" style="opacity: 0.3;"></div>
+                            <div class="viz-text">Phase 3: Production Deployment & Feedback Loop</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const volSlider = document.getElementById('volume');
+        const volDisplay = document.getElementById('vol-display');
+        
+        volSlider.oninput = function() {
+            volDisplay.innerHTML = Number(this.value).toLocaleString();
+        }
+
+        function runSimulation() {
+            const prob = document.getElementById('problem').value;
+            const complex = document.getElementById('complexity').value;
+            const volume = parseInt(volSlider.value);
+
+            // Simple logic for the concept
+            let title = "RAG-Based Knowledge Engine";
+            let roi = volume * 1.5;
+            let time = "8 Weeks";
+            let desc = "A Retrieval-Augmented Generation (RAG) approach is ideal here. It ensures your data stays private and the AI responses are grounded in your specific documents.";
+
+            if (complex === 'high' && volume > 50000) {
+                title = "Enterprise Agentic Workflow";
+                roi = volume * 4.2;
+                time = "16 Weeks";
+                desc = "Given the scale and complexity, we recommend an Agentic framework. This uses multiple specialized AI agents to handle cross-functional tasks autonomously.";
+            } else if (prob === 'cs') {
+                title = "Hybrid Support Orchestrator";
+                roi = volume * 0.85;
+                time = "6 Weeks";
+                desc = "Focus on a hybrid model that automates 70% of routine queries while seamlessly escalating complex cases to your human team.";
+            }
+
+            // Update UI
+            document.getElementById('placeholder').style.display = 'none';
+            document.getElementById('result-content').style.display = 'block';
+            
+            document.getElementById('rec-title').innerText = title;
+            document.getElementById('roi-val').innerText = '$' + Math.round(roi).toLocaleString();
+            document.getElementById('time-val').innerText = time;
+            document.getElementById('rec-desc').innerText = desc;
+
+            // Simple animation
+            document.getElementById('result-panel').style.borderColor = 'var(--accent)';
+            document.getElementById('result-panel').style.boxShadow = '0 0 20px rgba(34, 166, 179, 0.2)';
+        }
+    </script>
+</body>
+</html>

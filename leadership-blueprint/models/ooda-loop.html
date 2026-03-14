@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The OODA Loop | Leadership Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #e6edf3;
+            --text-dim: #7d8590;
+            --accent: #22a6b3;
+            --border: #30363d;
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-main); background: var(--bg); margin: 0; padding: 0; }
+        nav.main-nav { padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11, 14, 20, 0.8); backdrop-filter: blur(12px); z-index: 1000; }
+        .nav-content { display: flex; justify-content: center; gap: 3rem; align-items: center; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; transition: 0.3s; font-family: 'Inter', sans-serif; position: relative; }
+        .nav-link:hover, .nav-link.active { color: var(--accent); }
+
+        .nav-item-dropdown { position: relative; display: inline-block; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(22, 27, 34, 0.95); border: 1px solid var(--border); border-radius: 4px; box-shadow: var(--card-shadow); padding: 0.5rem 0; min-width: 220px; backdrop-filter: blur(12px); z-index: 1001; }
+        .dropdown-menu::before { content: ""; position: absolute; top: -15px; left: 0; width: 100%; height: 15px; background: transparent; }
+        .nav-item-dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-link { display: block; padding: 0.8rem 1.5rem; color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.2s; white-space: nowrap; }
+        .dropdown-link:hover { background: rgba(34, 166, 179, 0.1); color: var(--accent); }
+        .container { max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem; }
+        .metadata { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 0.5rem 0; color: #ffffff; }
+        .published-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+        .hero-image-container { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; background: var(--card-bg); padding: 2rem; display: flex; justify-content: center; }
+        .hero-image-container svg { width: 100%; height: auto; max-width: 600px; }
+        .meat-section h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-top: 4.5rem; font-size: 2.2rem; }
+        .action-box { background: rgba(34, 166, 179, 0.05); border-left: 5px solid var(--accent); padding: 3rem; border-radius: 8px; margin: 4rem 0; }
+        footer {
+            padding: 5rem 0;
+            background: #080a0f;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-top: 8rem;
+        }
+        
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav.main-nav { gap: 1.5rem; padding: 1rem; } .nav-link { font-size: 0.7rem; } }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="/" class="nav-link">About Pratik</a>
+            <a href="/#impact" class="nav-link">Impact</a>
+            <a href="/#highlights" class="nav-link">Highlights</a>
+            
+            <div class="nav-item-dropdown">
+                <a href="#" class="nav-link active">My Projects <span style="font-size: 0.6rem; opacity: 0.6;">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="/leadership-blueprint/" class="dropdown-link active">Leadership Blueprint</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="metadata">Strategy</div>
+        <h1>The OODA Loop</h1>
+        <div class="published-info">Published: March 2026 &bull; 4 min read &bull; Curated by Aurora</div>
+        <div class="hero-image-container">
+            <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="400" fill="var(--card-bg)" rx="12"/>
+                <!-- Circular Path -->
+                <circle cx="300" cy="200" r="120" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="8 4" opacity="0.3"/>
+                
+                <!-- Observe -->
+                <circle cx="300" cy="80" r="45" fill="var(--card-bg)" stroke="var(--accent)" stroke-width="3"/>
+                <text x="300" y="85" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">OBSERVE</text>
+                
+                <!-- Orient -->
+                <circle cx="420" cy="200" r="45" fill="var(--card-bg)" stroke="var(--accent)" stroke-width="3"/>
+                <text x="420" y="205" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ORIENT</text>
+                
+                <!-- Decide -->
+                <circle cx="300" cy="320" r="45" fill="var(--card-bg)" stroke="var(--accent)" stroke-width="3"/>
+                <text x="300" y="325" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">DECIDE</text>
+                
+                <!-- Act -->
+                <circle cx="180" cy="200" r="45" fill="var(--card-bg)" stroke="var(--accent)" stroke-width="3"/>
+                <text x="180" y="205" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ACT</text>
+
+                <!-- Arrows -->
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent)" />
+                    </marker>
+                </defs>
+                <path d="M345 80 Q420 80, 420 155" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <path d="M420 245 Q420 320, 345 320" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <path d="M255 320 Q180 320, 180 245" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <path d="M180 155 Q180 80, 255 80" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <text x="300" y="205" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">CONTINUOUS FEEDBACK LOOP</text>
+            </svg>
+        </div>
+        <div class="meat-section">
+            <h2>The 'Why': Mastering Rapid Decision-Making</h2>
+            <p>The OODA Loop—Observe, Orient, Decide, Act—is a powerful strategic framework for making decisions in fast-paced, uncertain environments. Originally developed by military strategist Colonel John Boyd to describe air-to-air combat, its principles have since been adopted by business leaders, first responders, and strategic thinkers worldwide.</p>
+            <p>The core philosophy of the OODA loop is that the individual or organization that can cycle through the loop fastest and most accurately wins. It's not just about speed; it's about agility—the ability to process information, adjust your mental models, and execute better than the competition.</p>
+
+            <h3>The Four Stages of the Loop:</h3>
+            
+            <h4>1. Observe (Collecting Raw Data)</h4>
+            <p>Observation is the act of gathering raw information from the environment. In a business context, this means monitoring market trends, competitor moves, internal performance metrics, and customer feedback. The goal is to build a comprehensive, unbiased picture of the "now."</p>
+            <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <circle cx="300" cy="100" r="40" fill="rgba(34, 166, 179, 0.1)" stroke="var(--accent)" stroke-width="2"/>
+                <path d="M280 100 L320 100 M300 80 L300 120" stroke="var(--accent)" stroke-width="2"/>
+                <circle cx="150" cy="50" r="5" fill="var(--text-dim)"/>
+                <circle cx="450" cy="150" r="5" fill="var(--text-dim)"/>
+                <circle cx="100" cy="120" r="5" fill="var(--text-dim)"/>
+                <path d="M150 50 L270 90" stroke="var(--text-dim)" stroke-width="1" stroke-dasharray="4 2"/>
+                <path d="M450 150 L330 110" stroke="var(--text-dim)" stroke-width="1" stroke-dasharray="4 2"/>
+                <text x="300" y="160" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Scanning the Environment for Signals</text>
+            </svg>
+
+            <h4>2. Orient (The Most Critical Step)</h4>
+            <p>Orientation is where you process your observations. It is the most important step because it involves filtering information through your culture, genetics, previous experience, and new information. Boyd argued that "orientation" is the key to the entire loop. If you have a flawed mental model, your decisions will be flawed regardless of how fast you act.</p>
+            <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="background-color: var(--card-bg); border-radius:8px;">
+                <rect x="200" y="60" width="200" height="80" rx="10" fill="rgba(34, 166, 179, 0.1)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="300" y="105" fill="var(--text-main)" font-family="Inter, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">MENTAL MODELS</text>
+                <path d="M150 100 L190 100" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <path d="M410 100 L450 100" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="300" y="170" fill="var(--text-dim)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Contextualizing Data Through Experience</text>
+            </svg>
+
+            <h4>3. Decide (Formulating a Hypothesis)</h4>
+            <p>Decision is the step of choosing a course of action. It's essentially forming a hypothesis: "If I do X, I expect Y to happen." Decisions should be made quickly but based on the orientation developed in the previous step. In the OODA framework, a decision is a commitment to a specific path.</p>
+
+            <h4>4. Act (Testing the Hypothesis)</h4>
+            <p>Action is the physical execution of the decision. Once you act, you have changed the environment, which immediately leads back to the "Observe" stage to see the results of your action. This creates a continuous cycle of learning and adaptation.</p>
+
+            <div class="action-box">
+                <h3>Applying OODA to Leadership</h3>
+                <p>Strategic leaders use the OODA Loop to navigate complex transformations:</p>
+                <ul>
+                    <li><strong>Shorten the Cycle:</strong> Don't wait for perfect information. Aim for "good enough" orientation and act. The faster you cycle, the more you learn.</li>
+                    <li><strong>Break the Opponent's Loop:</strong> By acting faster or more unpredictably than your competition, you force them to constantly restart their "Observe" and "Orient" phases, creating confusion.</li>
+                    <li><strong>Challenge Your Orientation:</strong> Actively seek out information that contradicts your current mental models. This prevents blind spots and improves the quality of your decisions.</li>
+                </ul>
+                <p>In digital transformation, where technology and market demands shift weekly, the OODA Loop is not just a tool—it's a survival strategy.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 <strong>Pratik Kumar Modi</strong>. All Rights Reserved.</p>
+                <p class="footer-note">
+                    This portfolio is a live demonstration of AI-assisted development, built and maintained using Aurora, my custom AI system.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

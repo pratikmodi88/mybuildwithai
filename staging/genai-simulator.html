@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenAI Strategy Simulator | Preview</title>
+    <title>GenAI Strategy Simulator | Executive Preview</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
             --accent: #22a6b3;
             --border: rgba(48, 54, 61, 0.6);
             --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            --success: #27ae60;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,18 +28,18 @@
             min-height: 100vh;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
 
         .header { text-align: center; margin-bottom: 4rem; }
         .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-        .subtitle { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        .subtitle { color: var(--text-dim); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
 
         /* Simulator Layout */
         .simulator-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
             align-items: start;
         }
 
@@ -46,11 +47,13 @@
         .control-panel {
             background: var(--glass-bg);
             border: 1px solid var(--border);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            position: sticky;
+            top: 2rem;
         }
-        .form-group { margin-bottom: 2rem; }
+        .form-group { margin-bottom: 2.5rem; }
         label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.8rem; }
         
         select, input[type="range"] {
@@ -58,33 +61,36 @@
             background: rgba(11, 14, 20, 0.5);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 0.8rem;
+            padding: 1rem;
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
+        select:focus { border-color: var(--accent); outline: none; }
 
         .btn-simulate {
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem;
             background: var(--accent);
             color: white;
             border: none;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .btn-simulate:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-simulate:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(34, 166, 179, 0.3); }
 
         /* Output Display */
         .result-panel {
             background: var(--glass-bg);
             border: 1px solid var(--border);
-            padding: 2.5rem;
+            padding: 3.5rem;
             border-radius: 12px;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             transition: 0.5s ease;
@@ -93,37 +99,51 @@
         .placeholder-text {
             flex: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: var(--text-dim);
-            font-style: italic;
             text-align: center;
         }
+        .placeholder-icon { font-size: 3rem; margin-bottom: 1.5rem; opacity: 0.5; }
 
-        .result-content { display: none; }
-        .result-header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
-        .rec-label { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
-        .rec-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 0.5rem; }
+        .result-content { display: none; animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
-        .metric-card { background: rgba(34, 166, 179, 0.05); padding: 1.5rem; border: 1px solid rgba(34, 166, 179, 0.2); border-radius: 8px; }
-        .metric-val { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); }
-        .metric-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); }
+        .result-header { border-bottom: 1px solid var(--border); padding-bottom: 2rem; margin-bottom: 3rem; }
+        .rec-label { color: var(--accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .rec-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-top: 0.8rem; color: #fff; }
 
-        .roadmap-viz {
-            background: rgba(11, 14, 20, 0.4);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px dashed var(--border);
-            margin-top: auto;
-        }
-        .viz-step { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        .viz-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
-        .viz-text { font-size: 0.9rem; color: var(--text-dim); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+        .metric-card { background: rgba(34, 166, 179, 0.05); padding: 2rem; border: 1px solid rgba(34, 166, 179, 0.2); border-radius: 8px; text-align: center; }
+        .metric-val { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .metric-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.1em; }
 
-        @media (max-width: 768px) {
+        .detail-section { margin-bottom: 4rem; }
+        .detail-section h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .detail-box { background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+        .detail-box h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; letter-spacing: 0.1em; }
+        .detail-box ul { list-style: none; }
+        .detail-box ul li { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 0.8rem; padding-left: 1.2rem; position: relative; }
+        .detail-box ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+        .roadmap-container { margin-top: 2rem; }
+        .roadmap-phase { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+        .roadmap-phase::after { content: ''; position: absolute; left: 24px; top: 50px; bottom: -30px; width: 2px; background: var(--border); }
+        .roadmap-phase:last-child::after { display: none; }
+        
+        .phase-num { width: 50px; height: 50px; background: var(--bg); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; z-index: 2; }
+        .phase-info h4 { font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+        .phase-info p { font-size: 0.95rem; color: var(--text-dim); }
+
+        @media (max-width: 1024px) {
             .simulator-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
+            .control-panel { position: static; }
+        }
+        @media (max-width: 768px) {
+            .metrics-grid, .detail-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -131,88 +151,119 @@
 
     <div class="container">
         <header class="header">
-            <span class="section-label">Interactive Strategy Tool</span>
-            <h1>GenAI Strategy Simulator.</h1>
-            <p class="subtitle">Input your business parameters to see the recommended architecture, ROI projection, and strategic roadmap.</p>
+            <span class="section-label">Strategic Simulation</span>
+            <h1>GenAI Strategy Blueprint.</h1>
+            <p class="subtitle">Go beyond generic AI implementation. Define your parameters to generate an enterprise-grade execution plan tailored to your business economics.</p>
         </header>
 
         <div class="simulator-grid">
             <!-- LEFT: Inputs -->
             <div class="control-panel">
                 <div class="form-group">
-                    <label>Business Problem</label>
+                    <label>Business Objective</label>
                     <select id="problem">
-                        <option value="cs">Customer Support Automation</option>
-                        <option value="doc">Intelligent Document Processing</option>
-                        <option value="know">Enterprise Knowledge Search</option>
-                        <option value="sales">Sales & Outreach Personalization</option>
+                        <option value="revenue">Revenue Recovery & Loss Prevention</option>
+                        <option value="ops">Operational Efficiency & FTE Scaling</option>
+                        <option value="cx">Automated Customer Experience (GenAI)</option>
+                        <option value="data">Strategic Data Insights & Analytics</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Data Complexity</label>
+                    <label>Data Landscape</label>
                     <select id="complexity">
-                        <option value="low">Structured Data (DBs/Spreadsheets)</option>
-                        <option value="med">Mixed (PDFs, Emails, Docs)</option>
-                        <option value="high">Deep Legacy / Unstructured</option>
+                        <option value="structured">Structured (Legacy DBs / ERP)</option>
+                        <option value="unstructured">Unstructured (PDFs, Audio, Video)</option>
+                        <option value="hybrid">Hybrid (Internal Docs + Live Data)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Monthly Volume (Trans.)</label>
-                    <input type="range" id="volume" min="1000" max="100000" step="5000" value="10000">
-                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-dim); margin-top: 0.5rem;">
-                        <span>1k</span>
-                        <span id="vol-display">10,000</span>
-                        <span>100k</span>
+                    <label>Scale (Annual Transaction Value)</label>
+                    <input type="range" id="volume" min="500000" max="50000000" step="500000" value="5000000">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-dim); margin-top: 1rem;">
+                        <span>$500k</span>
+                        <span id="vol-display">$5M</span>
+                        <span>$50M</span>
                     </div>
                 </div>
 
-                <button class="btn-simulate" onclick="runSimulation()">Run Strategy Simulation</button>
+                <div class="form-group">
+                    <label>Risk Tolerance</label>
+                    <select id="risk">
+                        <option value="low">Conservative (Governance First)</option>
+                        <option value="med">Balanced (Agile Implementation)</option>
+                        <option value="high">Disruptive (First-to-Market Focus)</option>
+                    </select>
+                </div>
+
+                <button class="btn-simulate" onclick="runSimulation()">Generate Strategy</button>
             </div>
 
             <!-- RIGHT: Results -->
             <div class="result-panel" id="result-panel">
                 <div class="placeholder-text" id="placeholder">
-                    Select your parameters and click "Run Simulation" to generate your Strategic Blueprint.
+                    <div class="placeholder-icon">◈</div>
+                    <p>Enter your business parameters to build a<br><strong>Strategic AI Execution Roadmap</strong>.</p>
                 </div>
 
                 <div class="result-content" id="result-content">
                     <div class="result-header">
-                        <span class="rec-label">Recommended Strategy</span>
-                        <h2 class="rec-title" id="rec-title">Hybrid RAG Architecture</h2>
+                        <span class="rec-label" id="rec-type">Architecture Focus</span>
+                        <h2 class="rec-title" id="rec-title">Hybrid Orchestration Engine</h2>
                     </div>
 
-                    <div class="metrics-row">
+                    <div class="metrics-grid">
                         <div class="metric-card">
-                            <span class="metric-val" id="roi-val">$450k</span>
-                            <span class="metric-label">Est. Annual Value</span>
+                            <span class="metric-val" id="roi-val">$4.2M</span>
+                            <span class="metric-label">Annual ROI Projection</span>
                         </div>
                         <div class="metric-card">
                             <span class="metric-val" id="time-val">12 Weeks</span>
-                            <span class="metric-label">Speed to Market</span>
+                            <span class="metric-label">Deployment Horizon</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-val" id="eff-val">40%</span>
+                            <span class="metric-label">Efficiency Gain</span>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2rem;">
-                        <label>Why this approach?</label>
-                        <p id="rec-desc" style="color: var(--text-dim); font-size: 0.95rem;">Based on your volume and complexity, a custom RAG (Retrieval-Augmented Generation) solution is more cost-effective than fine-tuning, providing 99% accuracy with real-time data grounding.</p>
+                    <div class="detail-section">
+                        <h3>Strategic Take</h3>
+                        <p id="rec-desc" style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem;">For enterprise-scale operations, we move beyond simple automation to a governance-led orchestration model. This ensures scalability while maintaining data integrity across legacy and modern ecosystems.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-box">
+                                <h4>Technical Foundations</h4>
+                                <ul id="tech-list">
+                                    <li>Multi-modal RAG (Retrieval Augmented Generation)</li>
+                                    <li>Automated Data Validation Pipelines</li>
+                                    <li>Enterprise-grade LLM Guardrails</li>
+                                    <li>Scalable Vector Database Infrastructure</li>
+                                </ul>
+                            </div>
+                            <div class="detail-box">
+                                <h4>Business Outcomes</h4>
+                                <ul id="business-list">
+                                    <li>Elimination of manual reconciliation bottlenecks</li>
+                                    <li>Real-time financial exposure visibility</li>
+                                    <li>Reduction in transaction processing costs</li>
+                                    <li>Accelerated executive decision cycles</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="roadmap-viz">
-                        <label style="margin-bottom: 1rem;">Execution Roadmap</label>
-                        <div class="viz-step">
-                            <div class="viz-dot"></div>
-                            <div class="viz-text">Phase 1: Data Orchestration & Vectorization</div>
+                    <div class="detail-section">
+                        <h3>Execution Roadmap</h3>
+                        <div class="roadmap-container" id="roadmap-content">
+                            <!-- Roadmap items injected via JS -->
                         </div>
-                        <div class="viz-step">
-                            <div class="viz-dot" style="opacity: 0.6;"></div>
-                            <div class="viz-text">Phase 2: RAG Pipeline & Guardrail Setup</div>
-                        </div>
-                        <div class="viz-step">
-                            <div class="viz-dot" style="opacity: 0.3;"></div>
-                            <div class="viz-text">Phase 3: Production Deployment & Feedback Loop</div>
-                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 2rem;">Want to discuss the architectural details of this specific blueprint?</p>
+                        <a href="https://www.linkedin.com/in/pratikkumarmodi/" target="_blank" class="btn-simulate" style="text-decoration: none; display: inline-block; width: auto; padding: 1rem 2.5rem;">Connect on LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -224,44 +275,132 @@
         const volDisplay = document.getElementById('vol-display');
         
         volSlider.oninput = function() {
-            volDisplay.innerHTML = Number(this.value).toLocaleString();
+            let val = parseInt(this.value);
+            if (val >= 1000000) {
+                volDisplay.innerHTML = '$' + (val / 1000000).toFixed(1) + 'M';
+            } else {
+                volDisplay.innerHTML = '$' + (val / 1000).toFixed(0) + 'k';
+            }
         }
 
         function runSimulation() {
-            const prob = document.getElementById('problem').value;
+            const objective = document.getElementById('problem').value;
             const complex = document.getElementById('complexity').value;
             const volume = parseInt(volSlider.value);
+            const risk = document.getElementById('risk').value;
 
-            // Simple logic for the concept
-            let title = "RAG-Based Knowledge Engine";
-            let roi = volume * 1.5;
-            let time = "8 Weeks";
-            let desc = "A Retrieval-Augmented Generation (RAG) approach is ideal here. It ensures your data stays private and the AI responses are grounded in your specific documents.";
+            // Strategic Content Logic
+            let data = {
+                title: "Enterprise AI Orchestrator",
+                type: "Architecture: Agentic RAG",
+                roi: volume * 0.15,
+                time: "12-14 Weeks",
+                eff: "35%",
+                desc: "Your scale requires a robust, self-healing orchestration layer. We recommend an Agentic RAG framework that doesn't just retrieve data, but validates it against business rules before delivery.",
+                tech: [
+                    "Proprietary RAG Orchestration Layer",
+                    "Automated Metadata Tagging Engine",
+                    "Real-time Drift Monitoring",
+                    "Integrated Governance Framework"
+                ],
+                business: [
+                    "Reduction in manual data entry overhead",
+                    "Standardized compliance reporting",
+                    "Improved speed-to-insight for stakeholders",
+                    "Scalable foundations for future LLM use-cases"
+                ],
+                phases: [
+                    { title: "Foundation (W1-4)", p: "Data cataloging, vector store setup, and baseline performance metrics." },
+                    { title: "Orchestration (W5-8)", p: "Deployment of agentic layers and multi-step validation logic." },
+                    { title: "Optimization (W9-12)", p: "User feedback loops, guardrail tightening, and final P&L alignment." }
+                ]
+            };
 
-            if (complex === 'high' && volume > 50000) {
-                title = "Enterprise Agentic Workflow";
-                roi = volume * 4.2;
-                time = "16 Weeks";
-                desc = "Given the scale and complexity, we recommend an Agentic framework. This uses multiple specialized AI agents to handle cross-functional tasks autonomously.";
-            } else if (prob === 'cs') {
-                title = "Hybrid Support Orchestrator";
-                roi = volume * 0.85;
-                time = "6 Weeks";
-                desc = "Focus on a hybrid model that automates 70% of routine queries while seamlessly escalating complex cases to your human team.";
+            if (objective === 'revenue') {
+                data.title = "Revenue Recovery Ecosystem";
+                data.type = "Strategic Model: Predictive AI";
+                data.roi = volume * 0.22;
+                data.eff = "45%";
+                data.desc = "Focusing on leakage points, this strategy utilizes predictive modeling to identify revenue recovery opportunities in real-time. It's built for high-stakes financial environments.";
+                data.tech = ["Anatomy of Loss Prediction Models", "Automated Billing Reconciliation", "Executive Revenue Dashboards", "Low-latency Data Streaming"];
+                data.business = ["Direct P&L impact through recovered losses", "Decreased time-to-collection", "Predictive forecasting accuracy", "Audit-ready financial trails"];
+            } else if (objective === 'cx') {
+                data.title = "Omnichannel GenAI Agent";
+                data.type = "User Experience: Multimodal LLM";
+                data.roi = volume * 0.12;
+                data.time = "8-10 Weeks";
+                data.eff = "60%";
+                data.desc = "By automating the customer front-end with human-level intelligence, we move from reactive support to proactive engagement, significantly lowering cost-per-interaction.";
+                data.tech = ["Multi-model LLM Switchboard", "Contextual Sentiment Analysis", "Human-in-the-loop (HITL) Triggers", "Zero-shot Intent Mapping"];
+                data.business = ["Dramatic reduction in support ticket volume", "24/7 high-fidelity customer engagement", "Personalized product recommendation engine", "Enhanced CSAT and NPS scores"];
+            }
+
+            if (complex === 'unstructured') {
+                data.tech.unshift("Intelligent Document Processing (IDP)");
+                data.phases[0].p = "Deep indexing of unstructured assets and OCR/Vision model fine-tuning.";
+            }
+
+            if (risk === 'low') {
+                data.tech.push("Strict PII/PHI Redaction Layer");
+                data.time = "14-16 Weeks";
+                data.desc += " Given the conservative risk profile, we have added extra layers for data privacy and regulatory compliance.";
             }
 
             // Update UI
             document.getElementById('placeholder').style.display = 'none';
             document.getElementById('result-content').style.display = 'block';
             
-            document.getElementById('rec-title').innerText = title;
-            document.getElementById('roi-val').innerText = '$' + Math.round(roi).toLocaleString();
-            document.getElementById('time-val').innerText = time;
-            document.getElementById('rec-desc').innerText = desc;
+            document.getElementById('rec-title').innerText = data.title;
+            document.getElementById('rec-type').innerText = data.type;
+            document.getElementById('roi-val').innerText = '$' + Math.round(data.roi / 1000) * 1000 >= 1000000 ? (data.roi / 1000000).toFixed(1) + 'M' : (data.roi / 1000).toFixed(0) + 'k';
+            
+            // Format ROI better
+            const formattedRoi = data.roi >= 1000000 ? '$' + (data.roi / 1000000).toFixed(1) + 'M+' : '$' + (data.roi / 1000).toFixed(0) + 'k+';
+            document.getElementById('roi-val').innerText = formattedRoi;
 
-            // Simple animation
+            document.getElementById('time-val').innerText = data.time;
+            document.getElementById('eff-val').innerText = data.eff;
+            document.getElementById('rec-desc').innerText = data.desc;
+
+            // Update Lists
+            const techUl = document.getElementById('tech-list');
+            techUl.innerHTML = '';
+            data.tech.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                techUl.appendChild(li);
+            });
+
+            const bizUl = document.getElementById('business-list');
+            bizUl.innerHTML = '';
+            data.business.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                bizUl.appendChild(li);
+            });
+
+            // Update Roadmap
+            const roadmapDiv = document.getElementById('roadmap-content');
+            roadmapDiv.innerHTML = '';
+            data.phases.forEach((phase, index) => {
+                const phaseDiv = document.createElement('div');
+                phaseDiv.className = 'roadmap-phase';
+                phaseDiv.innerHTML = `
+                    <div class="phase-num">${index + 1}</div>
+                    <div class="phase-info">
+                        <h4>${phase.title}</h4>
+                        <p>${phase.p}</p>
+                    </div>
+                `;
+                roadmapDiv.appendChild(phaseDiv);
+            });
+
+            // Animation
             document.getElementById('result-panel').style.borderColor = 'var(--accent)';
-            document.getElementById('result-panel').style.boxShadow = '0 0 20px rgba(34, 166, 179, 0.2)';
+            window.scrollTo({
+                top: document.getElementById('result-panel').offsetTop - 50,
+                behavior: 'smooth'
+            });
         }
     </script>
 </body>
